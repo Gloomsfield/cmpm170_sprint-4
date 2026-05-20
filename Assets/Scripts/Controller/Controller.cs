@@ -1,7 +1,22 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Controller : MonoBehaviour
 {
+
+
+    void OnLeftPaddle(InputValue value)
+    {
+        //TODO: Add event to move left paddle
+        Debug.Log("Left Paddle: " + value.Get<float>());
+    }
+
+    void OnRightPaddle(InputValue value)
+    {
+        //TODO: Add event to move right paddle
+        Debug.Log("Right Paddle: " + value.Get<float>());
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
