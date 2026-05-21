@@ -710,7 +710,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1958561675}
   - component: {fileID: 1958561674}
-  - component: {fileID: 1958561673}
   - component: {fileID: 1958561676}
   m_Layer: 0
   m_Name: ControllerManager
@@ -719,19 +718,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1958561673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958561672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eee2ec010e4a442588ac816c4e09cf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Controller
-  controllerInputHandler: {fileID: 1958561676}
 --- !u!114 &1958561674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -786,13 +772,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1958561672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fdf1c3549ac24089ad45409780b39ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 5eee2ec010e4a442588ac816c4e09cf8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ControllerInputHandler
-  inputSystem: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  actionMapName: Controller
-  rotation: Rotation
-  rotationAD: RotationAD
+  m_EditorClassIdentifier: Assembly-CSharp::Controller
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

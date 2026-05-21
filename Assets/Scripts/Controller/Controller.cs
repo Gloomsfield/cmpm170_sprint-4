@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class Controller : MonoBehaviour
 {
 
-    [SerializeField] private ControllerInputHandler controllerInputHandler; 
+    //[SerializeField] private ControllerInputHandler controllerInputHandler; 
 
     void OnShootBall(InputValue value)
     {
