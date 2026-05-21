@@ -1033,10 +1033,10 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ADRotation",
+                    "name": "RotationAD",
                     "type": "Value",
                     "id": "a7bf216f-9315-4226-b512-ad131ff86131",
-                    "expectedControlType": "",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -1077,26 +1077,37 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "530ec137-d863-41fa-8365-3870807ccaa5",
+                    "name": "1D Axis",
+                    "id": "aeb5abc5-6a38-45ce-a15e-74c5b6f6358c",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotationAD",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "4ff54cba-a4c4-4fb2-b645-eaa7c01c1e48",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ADRotation",
+                    "action": "RotationAD",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "b3d0f798-c245-4f2d-8189-6b6e0cbfc67d",
+                    "name": "positive",
+                    "id": "55d2d23a-3cd9-4b24-a388-7a20331f0f52",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ADRotation",
+                    "action": "RotationAD",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
