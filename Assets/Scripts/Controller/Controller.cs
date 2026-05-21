@@ -38,6 +38,11 @@ public class Controller : MonoBehaviour
         EventManager.InvokeRotation(value.Get<float>());
     }
 
+    void OnReset()
+    {
+        EventManager.InvokeReset();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
