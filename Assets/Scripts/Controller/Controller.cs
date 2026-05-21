@@ -8,8 +8,8 @@ public class Controller : MonoBehaviour
 
     void OnShootBall(InputValue value)
     {
-        //TODO: Add event to shoot ball
-        Debug.Log("ShootBall: " + value.Get<float>());
+        EventManager.InvokeShootBall();
+        //Debug.Log("ShootBall: " + value.Get<float>());
     }
 
     void OnLeftPaddle(InputValue value)
@@ -27,13 +27,15 @@ public class Controller : MonoBehaviour
     void OnRotationAD(InputValue value)
     {
         //TODO: Add event to handle rotation AD input
-        Debug.Log("Rotation AD: " + value.Get<float>());
+        //Debug.Log("Rotation AD: " + value.Get<float>());
+        EventManager.InvokeRotationAD(value.Get<float>());
     }
 
     void OnRotation(InputValue value)
     {
         //TODO: Add event to handle rotation input
-        Debug.Log("Rotation: " + value.Get<float>());
+        //Debug.Log("Rotation: " + value.Get<float>());
+        EventManager.InvokeRotation(value.Get<float>());
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
