@@ -4,7 +4,7 @@ using System;
 
 public class ControllerInputHandler : MonoBehaviour
 {
-    [Header("Input Action Asset")]
+    /*[Header("Input Action Asset")]
     [SerializeField] private InputActionAsset inputSystem; // The input actions asset created in Unity (InputSystem)
 
     [Header("Action Map Name Reference")]
@@ -39,6 +39,7 @@ public class ControllerInputHandler : MonoBehaviour
     always stores the current movement, rotation, jump,
     and sprint input values
     */
+    /*
     private void SubscribeActionValuesToInputEvents()
     {
         rotationAction.performed += rotationInfo => RotationInput = rotationInfo.ReadValue<Vector2>();
@@ -60,7 +61,7 @@ public class ControllerInputHandler : MonoBehaviour
 
         Input can be toggled indirectly by enabling/disbaleing this componet
         or directly by enabling/disableing the action map itself
-        */
+        
 
         inputSystem.FindActionMap(actionMapName).Enable();
     }
@@ -73,7 +74,7 @@ public class ControllerInputHandler : MonoBehaviour
 
         This disables the Player action map, stopping all input from being read.
         Useful for pausing the game or opening menus
-        */
+        
         inputSystem.FindActionMap(actionMapName).Disable();
-    }
+    }*/
 }
