@@ -1056,6 +1056,17 @@
                 },
                 {
                     "name": "",
+                    "id": "26274c13-3b2f-4729-8644-7945a9d0f8dc",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftPaddle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "9e2b7774-ddd8-48ab-816a-e1809a2096cc",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
@@ -1067,8 +1078,30 @@
                 },
                 {
                     "name": "",
+                    "id": "5d477bee-435c-4458-9c49-4e2b79bacd6d",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightPaddle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "57035417-ecae-4fd1-972b-751f317568a7",
                     "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShootBall",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a405611a-a5ef-4313-ac02-5106043bc201",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button24",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1111,8 +1144,8 @@
                 },
                 {
                     "name": "",
-                    "id": "b3e8ef7e-e099-42e2-bbe4-6727115d2184",
-                    "path": "",
+                    "id": "4afa002c-ed0d-4029-83b3-add839a3fa7e",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/stick/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

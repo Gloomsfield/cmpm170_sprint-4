@@ -30,6 +30,12 @@ public class Controller : MonoBehaviour
         Debug.Log("Rotation AD: " + value.Get<float>());
     }
 
+    void OnRotation(InputValue value)
+    {
+        //TODO: Add event to handle rotation input
+        Debug.Log("Rotation: " + value.Get<float>());
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
