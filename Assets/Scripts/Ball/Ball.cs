@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    Rigidbody rigidbody;
+    Rigidbody ballRigidbody;
 
     [Header("Ball Settings")]
     [SerializeField] float shootForce = 10.0f;
@@ -11,7 +11,7 @@ public class Ball : MonoBehaviour
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        ballRigidbody = GetComponent<Rigidbody>();
     }
 
     void OnEnable()
@@ -33,7 +33,7 @@ public class Ball : MonoBehaviour
     void ShootBall()
     {
         Debug.Log("Ball shot!");
-        rigidbody.AddForce(0, 0, shootForce, ForceMode.Impulse);
+        GetComponent<Rigidbody>().AddForce(0, 0, shootForce, ForceMode.Impulse);
     }
 
     void GetRotation(float rotationValue)
@@ -51,7 +51,8 @@ public class Ball : MonoBehaviour
     void ResetBall()
     {
         Debug.Log("Ball reset!");
-        rigidbody.linearVelocity = Vector3.zero;
+        ballRigidbody.linearVelocity = Vector3.zero;
+        ballRigidbody.angularVelocity = Vector3.zero;
         transform.position = new Vector3(0, 6, 13);
     }
 
