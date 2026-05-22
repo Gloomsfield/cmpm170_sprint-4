@@ -38,7 +38,7 @@ public class Ball : MonoBehaviour
     void ShootBall()
     {
         Debug.Log("Ball shot!");
-        ballRigidbody.AddForce(0, 0, shootForce, ForceMode.Impulse);
+        GetComponent<Rigidbody>().AddForce(0, 0, shootForce, ForceMode.Impulse);
     }
 
     void GetRotation(float rotationValue)
@@ -76,6 +76,7 @@ public class Ball : MonoBehaviour
     {
         Debug.Log("Ball reset!");
         ballRigidbody.linearVelocity = Vector3.zero;
+        ballRigidbody.angularVelocity = Vector3.zero;
         transform.position = new Vector3(0, 6, 13);
         ballTippedTooMuch = false;
     }
