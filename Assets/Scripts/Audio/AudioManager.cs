@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
     }
 
     [Header("Audio Settings")]
-    [SerializeField] private int audioSourcePoolSize = 10;
+    [SerializeField] private int audioSourcePoolSize = 5;
     [SerializeField] private List<SoundEvent> soundEvents; // Your big list in the Inspector
 
     private Dictionary<string, SoundEvent> _soundDictionary;
