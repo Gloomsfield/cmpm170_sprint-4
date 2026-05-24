@@ -1,32 +1,39 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FlipperController : MonoBehaviour
 {
     private HingeJoint _hingeJoint;
-    private JointSpring _jointSpring;
+    private JointMotor _jointMotor;
 
-    [Header("Spring Attributes")]
-    [SerializeField] private float spring = 50f;
-    [SerializeField] private float targetPosition = 20;
-    [SerializeField] private float damper = 0f;
+    [Header("Motor Attributes")]
+    [SerializeField] private float flipMotorSpeed = 200f;
+    [SerializeField] private float idleMotorSpeed = 0f;
+    [SerializeField] private float force = 50f;
 
-
-    void Start() {
+    void Start()
+    {
         _hingeJoint = GetComponent<HingeJoint>();
-        _jointSpring = _hingeJoint.spring;
-        SetSpringAttributes();
+        _jointMotor = _hingeJoint.motor;
+        SetMotorAttributes();
     }
 
-    void Update() {
-        /*
-        motor.motorSpeed = Input.GetKey(KeyCode.F) ? flipMotorSpeed : idleMotorSpeed;
-        hingeJoint.motor = motor;
-        */
+    void Update()
+    {
+        _hingeJoint.useMotor = true;
+        //_jointMotor.targetVelocity = Keyboard.current.fKey.isPressed ? flipMotorSpeed : idleMotorSpeed;
+        if (Keyboard.current.fKey.wasPressedThisFrame) {
+            Debug.Log("f key was pressed");
+            _jointMotor.targetVelocity = 50;
+        }
+        _hingeJoint.motor = _jointMotor;
     }
 
-    private void SetSpringAttributes() {
-        _jointSpring.spring = spring;
-        _jointSpring.targetPosition = targetPosition;
-        _jointSpring.damper = damper;
+    private void SetMotorAttributes()
+    {
+        _jointMotor.force = force;
+        _jointMotor.targetVelocity = idleMotorSpeed;
+        _jointMotor.freeSpin = false;
+        _hingeJoint.motor = _jointMotor;
     }
 }
