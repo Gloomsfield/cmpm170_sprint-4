@@ -6,6 +6,7 @@ public class Controller : MonoBehaviour
 
     //[SerializeField] private ControllerInputHandler controllerInputHandler; 
 
+
     void OnShootBall(InputValue value)
     {
         EventManager.InvokeShootBall();
@@ -41,17 +42,5 @@ public class Controller : MonoBehaviour
     void OnReset()
     {
         EventManager.InvokeReset();
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
