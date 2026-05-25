@@ -698,7 +698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlipperController
   flipperVelocity: 500
   maxFlipperAngle: 60
-  right: 1
+  side: 2
 --- !u!59 &1141563716
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -965,6 +965,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1995175802144755437, guid: dd113cdc2f7324c7a93908e2546525ad, type: 3}
+      propertyPath: side
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8582598318741243090, guid: dd113cdc2f7324c7a93908e2546525ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.302

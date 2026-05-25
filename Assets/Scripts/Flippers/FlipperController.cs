@@ -25,10 +25,10 @@ public class FlipperController : MonoBehaviour
     }
 
     void Update() {
-        if (_hingeJoint.angle >= maxFlipperAngle - 5) {
-            _jointMotor.targetVelocity = -flipperVelocity;
-            _hingeJoint.motor = _jointMotor;
-        } 
+        if (!(_hingeJoint.angle >= maxFlipperAngle - 5)) return;
+
+        _jointMotor.targetVelocity = -flipperVelocity;
+        _hingeJoint.motor = _jointMotor;
     }
 
     private void EnableFlipper() {
@@ -36,16 +36,16 @@ public class FlipperController : MonoBehaviour
 
         _jointMotor.targetVelocity = flipperVelocity;
         _jointMotor.force = flipperVelocity;
-        //Debug.Log("PRESSED RECEIVED");
+        _hingeJoint.motor = _jointMotor;
     }
 
     private void SetMotorAttributes() {
         _hingeJoint.useMotor = true;
         _hingeJoint.useLimits = true;
+
         var hingeLimits = _hingeJoint.limits;
         hingeLimits.max = maxFlipperAngle;
         _hingeJoint.limits = hingeLimits;
-        //_hingeJoint.limits.max = maxFlipperAngle;
     }
 
     private void SubscribeToTriggerEvent() {
