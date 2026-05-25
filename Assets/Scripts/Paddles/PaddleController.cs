@@ -19,6 +19,8 @@ public class FlipperController : MonoBehaviour
         _jointMotor = _hingeJoint.motor;
         _key = right ? Keyboard.current.jKey : Keyboard.current.fKey;
         SetMotorAttributes();
+
+        EventManager.leftFlipperTriggered += EnableFlipper;
     }
 
     void Update() {
@@ -34,6 +36,12 @@ public class FlipperController : MonoBehaviour
             }
         }
         _hingeJoint.motor = _jointMotor;
+    }
+
+    private void EnableFlipper() {
+        if (_hingeJoint.angle > 0) return;
+        Debug.Log("PRESSED RECEIVED");
+
     }
 
     private void SetMotorAttributes() {
