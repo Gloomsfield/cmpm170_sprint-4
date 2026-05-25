@@ -538,6 +538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ball
   shootForce: 30
   rotationForce: 10
+  ballTippingTime: 2
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7394933dbc444f68f0b85c971e1b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  audioSourcePoolSize: 10
+  audioSourcePoolSize: 5
   soundEvents:
   - eventName: 
     clip: {fileID: 0}
