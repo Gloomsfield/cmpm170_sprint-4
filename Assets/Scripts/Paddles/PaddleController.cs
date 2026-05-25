@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
@@ -8,40 +9,34 @@ public class FlipperController : MonoBehaviour
     private JointMotor _jointMotor;
     private KeyControl _key;
 
+    private enum Side { LEFT = 1, RIGHT = 2 };
 
     [Header("Motor Attributes")]
     [SerializeField] private float flipperVelocity = 500f;
     [SerializeField] private float maxFlipperAngle = 30f;
-    [SerializeField] private bool right = false;
+    [SerializeField] private Side side;
 
     void Start() {
         _hingeJoint = GetComponent<HingeJoint>();
         _jointMotor = _hingeJoint.motor;
-        _key = right ? Keyboard.current.jKey : Keyboard.current.fKey;
-        SetMotorAttributes();
 
-        EventManager.leftFlipperTriggered += EnableFlipper;
+        SetMotorAttributes();
+        SubscribeToTriggerEvent();
     }
 
     void Update() {
         if (_hingeJoint.angle >= maxFlipperAngle - 5) {
             _jointMotor.targetVelocity = -flipperVelocity;
-        } else if (_hingeJoint.angle > 0) {
-            return;
-        } else {
-            if (_key.wasPressedThisFrame) {
-                //Debug.Log("d key was pressed");
-                _jointMotor.targetVelocity = flipperVelocity;
-                _jointMotor.force = flipperVelocity;
-            }
-        }
-        _hingeJoint.motor = _jointMotor;
+            _hingeJoint.motor = _jointMotor;
+        } 
     }
 
     private void EnableFlipper() {
         if (_hingeJoint.angle > 0) return;
-        Debug.Log("PRESSED RECEIVED");
 
+        _jointMotor.targetVelocity = flipperVelocity;
+        _jointMotor.force = flipperVelocity;
+        //Debug.Log("PRESSED RECEIVED");
     }
 
     private void SetMotorAttributes() {
@@ -51,5 +46,17 @@ public class FlipperController : MonoBehaviour
         hingeLimits.max = maxFlipperAngle;
         _hingeJoint.limits = hingeLimits;
         //_hingeJoint.limits.max = maxFlipperAngle;
+    }
+
+    private void SubscribeToTriggerEvent() {
+        if (side == 0) {
+            throw new ArgumentNullException("Paddle side not set");
+        }
+
+        if (side == Side.LEFT) {
+            EventManager.leftFlipperTriggered += EnableFlipper;
+        } else {
+            EventManager.rightFlipperTriggered += EnableFlipper;
+        }
     }
 }
