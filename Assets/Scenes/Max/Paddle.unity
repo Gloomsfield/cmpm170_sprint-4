@@ -560,7 +560,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8386924417671347289, guid: 719f09cc5aaf54c7597077c475f495e2, type: 3}
       propertyPath: m_Name
-      value: convex_flipper
+      value: left_flipper
       objectReference: {fileID: 0}
     - target: {fileID: 250147113878546818, guid: 719f09cc5aaf54c7597077c475f495e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1011,7 +1011,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8386924417671347289, guid: 719f09cc5aaf54c7597077c475f495e2, type: 3}
       propertyPath: m_Name
-      value: convex_flipper (1)
+      value: right_flipper
       objectReference: {fileID: 0}
     - target: {fileID: 250147113878546818, guid: 719f09cc5aaf54c7597077c475f495e2, type: 3}
       propertyPath: m_LocalScale.x
