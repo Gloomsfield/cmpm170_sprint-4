@@ -37,6 +37,11 @@ public class FlipperController : MonoBehaviour
     }
 
     private void SetMotorAttributes() {
+        _hingeJoint.useMotor = true;
+        _hingeJoint.useLimits = true;
+        var hingeLimits = _hingeJoint.limits;
+        hingeLimits.max = maxFlipperAngle;
+        _hingeJoint.limits = hingeLimits;
         //_hingeJoint.limits.max = maxFlipperAngle;
     }
 }
