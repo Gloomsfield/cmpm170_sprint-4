@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 300f44e1cb41d4982b52d3f5520892e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CamShakeController
-  maxOffset: 40
+  maxOffset: 0.2
 --- !u!1 &349002792
 GameObject:
   m_ObjectHideFlags: 0
