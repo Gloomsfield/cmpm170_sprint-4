@@ -69,7 +69,7 @@ public class Ball : MonoBehaviour
     void GetRotationAD(float rotationValue)
     {
         rotation = rotationValue;
-        Debug.Log("Ball rotated AD: " + rotationValue);
+        //Debug.Log("Ball rotated AD: " + rotationValue);
     }
 
     void ResetBall()
