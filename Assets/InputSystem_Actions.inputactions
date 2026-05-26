@@ -1049,6 +1049,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SpawnBall",
+                    "type": "Button",
+                    "id": "a042f36a-522d-4c34-9bab-35b3cc566be4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1186,9 +1195,9 @@
                 },
                 {
                     "name": "",
-                    "id": "d46fdf08-6d05-4766-8739-9f4b751f44e8",
+                    "id": "7a3c9a20-542c-4925-93e7-a0cc80aa0da3",
                     "path": "<Mouse>/delta/x",
-                    "interactions": "Press",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Rotation",
@@ -1214,6 +1223,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "413e77ad-423b-4ffa-a62c-6d21ca4063c0",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpawnBall",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -39,4 +39,22 @@ public class EventManager
     {
         reset?.Invoke();
     }
+
+    public static event Action spawnBall;
+    public static void InvokeSpawnBall()
+    {
+        spawnBall?.Invoke();
+    }
+
+    public static event Action spawnBallCave;
+    public static void InvokeSpawnBallCave()
+    {
+        spawnBallCave?.Invoke();
+    }
+
+    public static event Action<Ball> holdBall;
+    public static void InvokeHoldBall(Ball ball)
+    {
+        holdBall?.Invoke(ball);
+    }
 }

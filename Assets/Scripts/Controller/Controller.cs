@@ -16,14 +16,14 @@ public class Controller : MonoBehaviour
     void OnLeftPaddle(InputValue value)
     {
         //TODO: Add event to move left paddle
-        Debug.Log("Left Paddle: " + value.Get<float>());
+        //Debug.Log("Left Paddle: " + value.Get<float>());
         EventManager.InvokeLeftFlipperTriggered();
     }
 
     void OnRightPaddle(InputValue value)
     {
         //TODO: Add event to move right paddle
-        Debug.Log("Right Paddle: " + value.Get<float>());
+        //Debug.Log("Right Paddle: " + value.Get<float>());
         EventManager.InvokeRightFlipperTriggered();
     }
 
@@ -44,5 +44,10 @@ public class Controller : MonoBehaviour
     void OnReset()
     {
         EventManager.InvokeReset();
+    }
+
+    void OnSpawnBall()
+    {
+        EventManager.InvokeSpawnBall();
     }
 }
