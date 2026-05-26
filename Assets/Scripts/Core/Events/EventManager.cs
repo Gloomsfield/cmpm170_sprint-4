@@ -51,4 +51,10 @@ public class EventManager
     {
         spawnBallCave?.Invoke();
     }
+
+    public static event Action<Ball> holdBall;
+    public static void InvokeHoldBall(Ball ball)
+    {
+        holdBall?.Invoke(ball);
+    }
 }

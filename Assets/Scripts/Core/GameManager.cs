@@ -10,5 +10,12 @@ public class GameManager
         ENDGAME,
     }
 
-    
 }
+
+    /*
+    Going to track:
+    - score
+    - balls/round left
+    - game state
+    - game over
+    */
