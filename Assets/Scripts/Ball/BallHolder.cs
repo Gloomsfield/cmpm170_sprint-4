@@ -10,15 +10,21 @@ public class BallHolder : MonoBehaviour
 
     [Header("Holder Settings")]
     [SerializeField] int hitsRequired = 2;
+    [SerializeField] float holdDuration = 5.0f;
+    [SerializeField] float canTriggerDelay = 3.0f;
+    [SerializeField] float delayBetweenSpawns = 1.0f;
 
+    
+    bool canTrigger = true;
     int currentHits = 0;
+    int ballsToSpawn = 2;
     Ball heldBall;
     Rigidbody heldBallRigidbody;
 
-    Coroutine TestTimer;
-
     void OnTriggerEnter(Collider other)
     {
+        if (!canTrigger) return;
+
         Debug.Log("Cave triggered");
         Ball ball = other.GetComponent<Ball>();
 
@@ -31,7 +37,8 @@ public class BallHolder : MonoBehaviour
         {
             currentHits =0;
             HoldBall(ball);
-            TestTimer = StartCoroutine(TestHoldDuration());
+            canTrigger = false;
+            StartCoroutine(SpawnBalls());
         }
 
         // TODO: Add event to play UI and stop controller input
@@ -51,6 +58,8 @@ public class BallHolder : MonoBehaviour
         heldBall.transform.position = holdPosition.position;
         heldBall.transform.rotation = holdPosition.rotation;
 
+        canTrigger = false;
+
         Debug.Log("Ball held!");
     }
 
@@ -68,10 +77,24 @@ public class BallHolder : MonoBehaviour
         heldBallRigidbody = null;
     }
 
-    IEnumerator TestHoldDuration()
+    IEnumerator SpawnBalls()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(holdDuration);
         ReleaseBall();
+
+        for (int i = 0; i < ballsToSpawn; i++)
+        {
+            yield return new WaitForSeconds(delayBetweenSpawns);
+            EventManager.InvokeSpawnBallCave();
+        }
+
+        StartCoroutine(TriggerDelay());
+    }
+
+    IEnumerator TriggerDelay()
+    {
+        yield return new WaitForSeconds(canTriggerDelay);
+        canTrigger = true;
     }
 
 }

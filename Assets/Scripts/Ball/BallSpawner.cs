@@ -35,7 +35,10 @@ public class BallSpawner : MonoBehaviour
 
     void SpawnBallCave()
     {
-        Instantiate(ballPrefab, spawnLocationCave.position, spawnLocationCave.rotation);
+        GameObject ballObject = Instantiate(ballPrefab, spawnLocationCave.position, spawnLocationCave.rotation);
+        Ball ball = ballObject.GetComponent<Ball>();
+        ballLauncher.SetBall(ball);
+        GameManager.Instance.RegisterBall();
     }
 
 }
