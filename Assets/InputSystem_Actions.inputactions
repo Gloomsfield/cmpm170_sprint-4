@@ -1195,6 +1195,17 @@
                 },
                 {
                     "name": "",
+                    "id": "7a3c9a20-542c-4925-93e7-a0cc80aa0da3",
+                    "path": "<Mouse>/delta/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "1ab5f789-e6d4-44ee-8bfc-c96a21957414",
                     "path": "<Keyboard>/r",
                     "interactions": "",
