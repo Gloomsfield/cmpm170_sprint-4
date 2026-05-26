@@ -45,4 +45,9 @@ public class Controller : MonoBehaviour
     {
         EventManager.InvokeReset();
     }
+
+    void OnSpawnBall()
+    {
+        EventManager.InvokeSpawnBall();
+    }
 }

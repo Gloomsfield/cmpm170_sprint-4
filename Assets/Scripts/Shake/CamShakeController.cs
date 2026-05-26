@@ -9,9 +9,9 @@ public class CamShakeController : MonoBehaviour {
     }
 
     private void TiltCam(float amount) {
-        Debug.Log("tilt cam received" + amount);
-        Vector3 offset = new Vector3(amount, 0, 0);
-        gameObject.transform.position += offset;
+        //Debug.Log("tilt cam received" + amount);
+        //Vector3 offset = new Vector3(amount, 0, 0);
+        //gameObject.transform.position += offset;
     }
 
 }

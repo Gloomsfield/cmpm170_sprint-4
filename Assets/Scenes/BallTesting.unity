@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66101a3efe70ee40a202e6e35858697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BallSpawner
-  ballPrefab: {fileID: 0}
+  ballPrefab: {fileID: 3098904509302931408, guid: f5d10dba3be9e374ba24fbe46f05e394, type: 3}
   spawnLocation: {x: -4.5, y: 8.5, z: 6}
   spawnLocationCave: {x: 0, y: 0, z: 0}
 --- !u!114 &461862591

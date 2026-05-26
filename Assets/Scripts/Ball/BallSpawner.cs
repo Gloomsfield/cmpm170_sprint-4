@@ -13,12 +13,14 @@ public class BallSpawner : MonoBehaviour
 
     void OnEnable()
     {
-        //TODO: subscribe to event
+        EventManager.spawnBall += SpawnBall;
+        EventManager.spawnBallCave += SpawnBallCave;
     }
 
     void OnDisable()
     {
-        //TODO: unsubscribe to event
+        EventManager.spawnBall -= SpawnBall;
+        EventManager.spawnBallCave -= SpawnBallCave;
     }
 
     void SpawnBall()
