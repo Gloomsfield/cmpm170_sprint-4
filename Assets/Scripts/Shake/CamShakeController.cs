@@ -17,6 +17,10 @@ public class CamShakeController : MonoBehaviour {
                 currentPos.y,
                 currentPos.z
                 );
+        // Lets the ball controller know how much to offset the ball
+        // TODO extract the clamp logic out and have this script and ball
+        // controller catch the same event
+        EventManager.InvokeMachineTilted(tiltAmount);
         //Debug.Log($"transform at{gameObject.transform.position}");
     }
 
