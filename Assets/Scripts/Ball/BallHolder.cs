@@ -1,14 +1,41 @@
 using UnityEngine;
+using System.Collections;
 
 public class BallHolder : MonoBehaviour
 {
 
-    [Header("Hold Settings")]
+    [Header("Hold Positions")]
     [SerializeField] Transform holdPosition;
     [SerializeField] Transform releasePosition;
 
+    [Header("Holder Settings")]
+    [SerializeField] int hitsRequired = 2;
+
+    int currentHits = 0;
     Ball heldBall;
     Rigidbody heldBallRigidbody;
+
+    Coroutine TestTimer;
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Cave triggered");
+        Ball ball = other.GetComponent<Ball>();
+
+        if (ball == null) return;
+        if (heldBall != null) return;
+
+        currentHits++;
+
+        if (currentHits >= hitsRequired)
+        {
+            currentHits =0;
+            HoldBall(ball);
+            TestTimer = StartCoroutine(TestHoldDuration());
+        }
+
+        // TODO: Add event to play UI and stop controller input
+    }
 
     public void HoldBall(Ball ball)
     {
@@ -40,4 +67,11 @@ public class BallHolder : MonoBehaviour
         heldBall = null;
         heldBallRigidbody = null;
     }
+
+    IEnumerator TestHoldDuration()
+    {
+        yield return new WaitForSeconds(5f);
+        ReleaseBall();
+    }
+
 }

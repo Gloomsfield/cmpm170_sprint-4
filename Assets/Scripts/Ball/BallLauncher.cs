@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class BallLauncher : MonoBehaviour
 {
-
     [SerializeField] Ball currentBall;
 
     bool canShoot = false;
@@ -20,7 +19,7 @@ public class BallLauncher : MonoBehaviour
     void TryShootBall()
     {
         if (!canShoot) return;
-        if (currentBall != null) return;
+        if (currentBall == null) return;
 
         canShoot = false;
         currentBall.Launch();

@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class BallSpawner : MonoBehaviour
 {
+    [SerializeField] BallLauncher ballLauncher;
+
     [Header("Ball Prefab")]
     [SerializeField] GameObject ballPrefab;
 
     [Header("Ball Spawner Location")]
-    [SerializeField] Vector3 spawnLocation;
+    [SerializeField] Transform spawnLocation;
     [Header("Ball Spawner Location Cave")]
-    [SerializeField] Vector3 spawnLocationCave;
+    [SerializeField] Transform spawnLocationCave;
 
 
     void OnEnable()
@@ -25,12 +27,14 @@ public class BallSpawner : MonoBehaviour
 
     void SpawnBall()
     {
-        Instantiate(ballPrefab, spawnLocation, Quaternion.identity);
+        GameObject ballObject = Instantiate(ballPrefab, spawnLocation.position, spawnLocation.rotation);
+        Ball ball = ballObject.GetComponent<Ball>();
+        ballLauncher.SetBall(ball);
     }
 
     void SpawnBallCave()
     {
-        Instantiate(ballPrefab, spawnLocationCave, Quaternion.identity);
+        Instantiate(ballPrefab, spawnLocationCave.position, spawnLocationCave.rotation);
     }
 
 }
