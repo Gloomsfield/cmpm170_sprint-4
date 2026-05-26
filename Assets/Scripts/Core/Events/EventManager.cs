@@ -10,6 +10,18 @@ public class EventManager
         shootBall?.Invoke();
     }
 
+    public static event Action leftFlipperTriggered;
+    public static void InvokeLeftFlipperTriggered()
+    {
+        leftFlipperTriggered?.Invoke();
+    }
+    
+    public static event Action rightFlipperTriggered;
+    public static void InvokeRightFlipperTriggered()
+    {
+        rightFlipperTriggered?.Invoke();
+    }
+
     public static event Action<float> rotationAD;
     public static void InvokeRotationAD(float rotationValue)
     {
