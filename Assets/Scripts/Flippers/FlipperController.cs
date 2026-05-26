@@ -3,8 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 
-public class FlipperController : MonoBehaviour
-{
+public class FlipperController : MonoBehaviour {
     private HingeJoint _hingeJoint;
     private JointMotor _jointMotor;
     private KeyControl _key;
