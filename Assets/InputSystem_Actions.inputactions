@@ -1049,6 +1049,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SpawnBall",
+                    "type": "Button",
+                    "id": "a042f36a-522d-4c34-9bab-35b3cc566be4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1076,6 +1085,17 @@
                 },
                 {
                     "name": "",
+                    "id": "619a74e0-5210-4016-804b-9c638ca89141",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftPaddle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "9e2b7774-ddd8-48ab-816a-e1809a2096cc",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
@@ -1089,6 +1109,17 @@
                     "name": "",
                     "id": "5d477bee-435c-4458-9c49-4e2b79bacd6d",
                     "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightPaddle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b52b9306-ecb0-45f1-bfb9-7519cdcf3709",
+                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1164,6 +1195,17 @@
                 },
                 {
                     "name": "",
+                    "id": "7a3c9a20-542c-4925-93e7-a0cc80aa0da3",
+                    "path": "<Mouse>/delta/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "1ab5f789-e6d4-44ee-8bfc-c96a21957414",
                     "path": "<Keyboard>/r",
                     "interactions": "",
@@ -1181,6 +1223,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "413e77ad-423b-4ffa-a62c-6d21ca4063c0",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpawnBall",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

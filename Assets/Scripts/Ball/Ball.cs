@@ -21,7 +21,7 @@ public class Ball : MonoBehaviour
 
     void OnEnable()
     {
-        EventManager.shootBall += ShootBall;
+        //EventManager.shootBall += ShootBall;
         EventManager.rotation += GetRotation;
         EventManager.rotationAD += GetRotationAD;
         EventManager.reset += ResetBall;
@@ -29,16 +29,16 @@ public class Ball : MonoBehaviour
 
     void OnDisable()
     {
-        EventManager.shootBall -= ShootBall;
+        //EventManager.shootBall -= ShootBall;
         EventManager.rotation -= GetRotation;
         EventManager.rotationAD -= GetRotationAD;
         EventManager.reset -= ResetBall;
     }
 
-    void ShootBall()
+    public void Launch()
     {
         Debug.Log("Ball shot!");
-        GetComponent<Rigidbody>().AddForce(0, 0, shootForce, ForceMode.Impulse);
+        GetComponent<Rigidbody>().AddForce(0, 0, -shootForce, ForceMode.Impulse);
     }
 
     void GetRotation(float rotationValue)
@@ -69,7 +69,7 @@ public class Ball : MonoBehaviour
     void GetRotationAD(float rotationValue)
     {
         rotation = rotationValue;
-        Debug.Log("Ball rotated AD: " + rotationValue);
+        //Debug.Log("Ball rotated AD: " + rotationValue);
     }
 
     void ResetBall()
