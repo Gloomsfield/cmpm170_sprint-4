@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 
+/* This class is accessing the InputSystem directly for testing/demonstration
+ * purposes */
 public class FlipperController : MonoBehaviour {
     private HingeJoint _hingeJoint;
     private JointMotor _jointMotor;
@@ -15,7 +17,12 @@ public class FlipperController : MonoBehaviour {
     [SerializeField] private float maxFlipperAngle = 30f;
     [SerializeField] private Side side;
 
+    private bool _buttonHeld = false;
+
     void Start() {
+         //flipperOff = InputSystem.actions.FindAction("LeftPaddle");
+         //flipperOff.canceled += (_) => Debug.Log("it was cancelled");
+         //Debug.Log(flipperOff);
         _hingeJoint = GetComponent<HingeJoint>();
         _jointMotor = _hingeJoint.motor;
 
@@ -24,6 +31,7 @@ public class FlipperController : MonoBehaviour {
     }
 
     void Update() {
+        if (_buttonHeld) return;
         if (!(_hingeJoint.angle >= maxFlipperAngle - 5)) return;
 
         _jointMotor.targetVelocity = -flipperVelocity;
@@ -31,6 +39,7 @@ public class FlipperController : MonoBehaviour {
     }
 
     private void EnableFlipper() {
+        _buttonHeld = true;
         if (_hingeJoint.angle > 0) return;
 
         _jointMotor.targetVelocity = flipperVelocity;
@@ -52,10 +61,18 @@ public class FlipperController : MonoBehaviour {
             throw new ArgumentNullException("Paddle side not set");
         }
 
+        var actionMap = InputSystem.actions;
+        InputAction flipperAction;
         if (side == Side.LEFT) {
-            EventManager.leftFlipperTriggered += EnableFlipper;
+            flipperAction = actionMap.FindAction("LeftPaddle");
+            flipperAction.started +=  (_) => EnableFlipper();
+            //EventManager.leftFlipperTriggered += EnableFlipper;
+            
         } else {
-            EventManager.rightFlipperTriggered += EnableFlipper;
+            flipperAction = actionMap.FindAction("RightPaddle");
+            flipperAction.started += (_) => EnableFlipper();
+            //EventManager.rightFlipperTriggered += EnableFlipper;
         }
+        flipperAction.canceled += (_) => _buttonHeld = false; 
     }
 }
