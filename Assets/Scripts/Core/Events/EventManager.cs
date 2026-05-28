@@ -57,4 +57,14 @@ public class EventManager
     {
         holdBall?.Invoke(ball);
     }
+
+	public static event Action<uint> increaseScore;
+	public static void InvokeScoreIncreased(uint delta) {
+		increaseScore?.Invoke(delta);
+	}
+
+	public static event Action<uint> updateScore;
+	public static void InvokeScoreUpdated(uint newScore) {
+		updateScore?.Invoke(newScore);
+	}
 }
