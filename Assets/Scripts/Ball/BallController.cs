@@ -9,13 +9,12 @@ public class BallController : MonoBehaviour {
     private void Start() {
         rb = GetComponent<Rigidbody>();
 
-        EventManager.machineTilted += PushBall;
-        //EventManager.rotationAD += PushBall;
+        EventManager.rotation += PushBall;
     }
 
     private void PushBall (float amount) {
         Debug.Log($"Applying force {amount}");
-        Vector3 forceVector = new Vector3(amount * forceMultiplier * 50, 0, 0);
+        Vector3 forceVector = new Vector3(amount * forceMultiplier, 0, 0);
         rb.AddForce(forceVector);
     }
 

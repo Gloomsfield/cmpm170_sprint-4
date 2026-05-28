@@ -34,12 +34,6 @@ public class EventManager
         rotation?.Invoke(rotationValue);
     }
 
-    public static event Action<float> machineTilted;
-    public static void InvokeMachineTilted(float tiltAmount)
-    {
-        machineTilted?.Invoke(tiltAmount);
-    }
-
     public static event Action reset;
     public static void InvokeReset()
     {
