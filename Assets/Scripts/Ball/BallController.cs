@@ -9,8 +9,8 @@ public class BallController : MonoBehaviour {
     private void Start() {
         rb = GetComponent<Rigidbody>();
 
-        //EventManager.machineTilted += PushBall;
-        EventManager.rotationAD += PushBall;
+        EventManager.machineTilted += PushBall;
+        //EventManager.rotationAD += PushBall;
     }
 
     private void PushBall (float amount) {
