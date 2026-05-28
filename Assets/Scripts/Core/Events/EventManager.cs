@@ -67,4 +67,10 @@ public class EventManager
 	public static void InvokeScoreUpdated(uint newScore) {
 		updateScore?.Invoke(newScore);
 	}
+
+    public static event Action<string> playAnimation;
+    public static void InvokePlayAnimation(string animationName)
+    {
+        playAnimation?.Invoke(animationName);
+    }
 }
