@@ -5,7 +5,7 @@ public class AnimationTester : MonoBehaviour
 {
     void Update()
     {
-        // Press 1 to test fire animation
+        // Press z to test fire animation
         if (Keyboard.current.zKey.wasPressedThisFrame)
         {
             EventManager.InvokePlayAnimation("Fire");
@@ -13,7 +13,7 @@ public class AnimationTester : MonoBehaviour
             Debug.Log("Played Fire");
         }
 
-        // Press 2 to test boulder animation
+        // Press x to test boulder animation
         if (Keyboard.current.xKey.wasPressedThisFrame)
         {
             EventManager.InvokePlayAnimation("Boulder");

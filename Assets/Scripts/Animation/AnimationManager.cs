@@ -5,11 +5,18 @@ using System.Collections.Generic;
 public class AnimationManager : MonoBehaviour
 {
     [System.Serializable]
+    public class SoundCue
+    {
+        public string soundName;
+        public float delay = 0f;
+    }
+
+    [System.Serializable]
     public class AnimationFrame
     {
         public Texture image;
         public float duration = 2f;
-        public List<string> soundsToPlay;
+        public List<SoundCue> sounds;
     }
 
     [System.Serializable]
@@ -62,13 +69,19 @@ public class AnimationManager : MonoBehaviour
     {
         foreach (var frame in animation.frames)
         {
-            screenRenderer.material.mainTexture = frame.image;
-            foreach (var soundName in frame.soundsToPlay)
+            screenRenderer.material.SetTexture("_BaseMap", frame.image);
+            foreach (var sound in frame.sounds)
             {
-                AudioManager.Instance.PlaySound(soundName);
+                StartCoroutine(PlayDelayedSound(sound));
             }
 
             yield return new WaitForSeconds(frame.duration);
         }
+    }
+
+    IEnumerator PlayDelayedSound(SoundCue soundCue)
+    {
+        yield return new WaitForSeconds(soundCue.delay);
+        AudioManager.Instance.PlaySound(soundCue.soundName);
     }
 }

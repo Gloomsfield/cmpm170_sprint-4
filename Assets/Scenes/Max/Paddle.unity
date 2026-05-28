@@ -842,33 +842,33 @@ MonoBehaviour:
     frames:
     - image: {fileID: 2800000, guid: beb5856c9dcbd8d4a813145f7e0523c6, type: 3}
       duration: 5
-      soundsToPlay: []
+      sounds: []
     - image: {fileID: 2800000, guid: 150d1107c8324074ca98629b82780569, type: 3}
       duration: 3
-      soundsToPlay: []
+      sounds: []
     - image: {fileID: 2800000, guid: 7d32dd13efebcee4c8b29ae91aee0429, type: 3}
       duration: 2
-      soundsToPlay: []
+      sounds: []
     - image: {fileID: 2800000, guid: 865d276348059644e8239a445101005f, type: 3}
       duration: 3
-      soundsToPlay: []
+      sounds: []
     - image: {fileID: 2800000, guid: 83b01ceee0013494491ed44bcd3d505f, type: 3}
       duration: 2
-      soundsToPlay: []
+      sounds: []
   - animationName: Boulder
     frames:
     - image: {fileID: 2800000, guid: e45e5cf1c67718543984a6bcbc1cc687, type: 3}
       duration: 4
-      soundsToPlay: []
+      sounds: []
     - image: {fileID: 2800000, guid: 84e6afb250d96e344ac099b5ce4a9078, type: 3}
       duration: 3
-      soundsToPlay: []
+      sounds: []
     - image: {fileID: 2800000, guid: c9c5926eeaf156443afa7d6a3b22e2d7, type: 3}
       duration: 2
-      soundsToPlay: []
+      sounds: []
     - image: {fileID: 2800000, guid: b2fd8c65ecdafb14880e785d0e9d85f3, type: 3}
       duration: 5
-      soundsToPlay: []
+      sounds: []
 --- !u!4 &1133727473
 Transform:
   m_ObjectHideFlags: 0
