@@ -207,7 +207,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.95405096, z: -0.29964453, w: 0}
-  m_LocalPosition: {x: 0, y: 23.13, z: 19.55}
+  m_LocalPosition: {x: 0, y: 27.54, z: 16.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -603,7 +603,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: dc61efe1dc2054a4892c650948cf5d69, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -643,13 +643,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573689653}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.49024, y: 16.94585, z: -9.44472}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0.05, y: 16.32, z: -9.36}
+  m_LocalScale: {x: 9, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &637390950
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,6 +806,96 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1133727471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1133727473}
+  - component: {fileID: 1133727472}
+  - component: {fileID: 1133727474}
+  m_Layer: 0
+  m_Name: AnimationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1133727472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133727471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099b805e039f52040aacad14301b37f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationManager
+  screenRenderer: {fileID: 573689655}
+  animations:
+  - animationName: Fire
+    frames:
+    - image: {fileID: 2800000, guid: beb5856c9dcbd8d4a813145f7e0523c6, type: 3}
+      duration: 5
+      soundsToPlay: []
+    - image: {fileID: 2800000, guid: 150d1107c8324074ca98629b82780569, type: 3}
+      duration: 3
+      soundsToPlay: []
+    - image: {fileID: 2800000, guid: 7d32dd13efebcee4c8b29ae91aee0429, type: 3}
+      duration: 2
+      soundsToPlay: []
+    - image: {fileID: 2800000, guid: 865d276348059644e8239a445101005f, type: 3}
+      duration: 3
+      soundsToPlay: []
+    - image: {fileID: 2800000, guid: 83b01ceee0013494491ed44bcd3d505f, type: 3}
+      duration: 2
+      soundsToPlay: []
+  - animationName: Boulder
+    frames:
+    - image: {fileID: 2800000, guid: e45e5cf1c67718543984a6bcbc1cc687, type: 3}
+      duration: 4
+      soundsToPlay: []
+    - image: {fileID: 2800000, guid: 84e6afb250d96e344ac099b5ce4a9078, type: 3}
+      duration: 3
+      soundsToPlay: []
+    - image: {fileID: 2800000, guid: c9c5926eeaf156443afa7d6a3b22e2d7, type: 3}
+      duration: 2
+      soundsToPlay: []
+    - image: {fileID: 2800000, guid: b2fd8c65ecdafb14880e785d0e9d85f3, type: 3}
+      duration: 5
+      soundsToPlay: []
+--- !u!4 &1133727473
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133727471}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.49024, y: 16.94585, z: -9.44472}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1133727474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133727471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c13e994f90e0e46bfcdb4240a5ce9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimationTester
 --- !u!1 &1141563714 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8386924417671347289, guid: 719f09cc5aaf54c7597077c475f495e2, type: 3}
@@ -1154,3 +1244,4 @@ SceneRoots:
   - {fileID: 7185274205570215065}
   - {fileID: 2052891026}
   - {fileID: 573689657}
+  - {fileID: 1133727473}
