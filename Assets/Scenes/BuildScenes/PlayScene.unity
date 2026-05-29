@@ -174,7 +174,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8381744303421372858, guid: d7385984a428c1d429351dfa7cfbeab1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1707997170}
   m_SourcePrefab: {fileID: 100100000, guid: d7385984a428c1d429351dfa7cfbeab1, type: 3}
 --- !u!1 &253754623
 GameObject:
@@ -1942,6 +1945,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507600311}
   m_CullTransparentMesh: 1
+--- !u!1 &1707997166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8381744303421372858, guid: d7385984a428c1d429351dfa7cfbeab1, type: 3}
+  m_PrefabInstance: {fileID: 232739040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1707997170
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707997166}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -296823092589045553, guid: d7385984a428c1d429351dfa7cfbeab1, type: 3}
 --- !u!1 &1731524423
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,7 +2061,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1742788830}
   - component: {fileID: 1742788829}
-  - component: {fileID: 1742788831}
   m_Layer: 0
   m_Name: UI Manager
   m_TagString: Untagged
@@ -2054,6 +2083,7 @@ MonoBehaviour:
   mainMenu: {fileID: 253754623}
   credits: {fileID: 836940501}
   pauseMenu: {fileID: 1895004016}
+  startButton: {fileID: 2066712028}
   resumeButton: {fileID: 1210712157}
   menuButton: {fileID: 1198519000}
   creditButton: {fileID: 1281222748}
@@ -2073,36 +2103,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1742788831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742788828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: 
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &1879105051
 GameObject:
   m_ObjectHideFlags: 0
