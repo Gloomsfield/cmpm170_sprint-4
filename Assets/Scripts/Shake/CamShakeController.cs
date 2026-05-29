@@ -2,20 +2,22 @@ using UnityEngine;
 
 public class CamShakeController : MonoBehaviour {
 
-    [SerializeField] private float maxOffset = 0.2f;
+    [SerializeField] private float moveMultiplier = 1f;
+
+    private Vector3 _initialPosition;
 
     void Start() {
         EventManager.rotation += TiltCam;
+        _initialPosition = transform.position;
     }
 
     private void TiltCam(float shakeStrength) {
-        Vector3 currentPos = gameObject.transform.position;
-        float proposedTiltAmount = currentPos.x + shakeStrength * 0.05f;
+        float proposedTiltAmount = _initialPosition.x + shakeStrength * moveMultiplier;
        // float tiltAmount = Mathf.Clamp(proposedTiltAmount, -maxOffset, maxOffset);
         gameObject.transform.position = new Vector3(
                 proposedTiltAmount,
-                currentPos.y,
-                currentPos.z
+                _initialPosition.y,
+                _initialPosition.z
                 );
     }
 

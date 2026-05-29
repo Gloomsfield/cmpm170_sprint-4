@@ -76,7 +76,7 @@ public class Ball : MonoBehaviour {
         var tipAmount = amount - _lastFrameTip;
         _lastFrameTip += tipAmount;
         var forceVector = new Vector3(tipAmount * forceMultiplier, 0, 0);
-        var newPosition = transform.position + forceVector; 
+        //var newPosition = transform.position + forceVector; 
         _rb.linearVelocity += forceVector;
         //Debug.Log($"Applying force {tipAmount}");
     }
