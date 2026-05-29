@@ -61,6 +61,7 @@ public class ReflectionAnimationManager : MonoBehaviour
     void PlayAnimation(string animationName)
     {
         StopAllCoroutines();
+		AudioManager.Instance.StopAllSounds();
         StartCoroutine(PlayAnimationCoroutine(animationDictionary[animationName]));
     }
 
