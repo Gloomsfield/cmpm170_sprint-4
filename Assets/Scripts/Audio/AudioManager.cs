@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
     private Dictionary<string, SoundEvent> _soundDictionary;
     private List<AudioSource> _pool;
 
-    private void Awake()
+    private void OnEnable()
     {
         // Setup Singleton
         if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }
