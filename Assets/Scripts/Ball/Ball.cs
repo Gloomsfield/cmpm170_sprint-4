@@ -11,10 +11,12 @@ public class Ball : MonoBehaviour {
     private enum Direction { NONE, LEFT, RIGHT }
     private Direction direction;
 
+    private Coroutine _tipCoroutine;
+
     [Header("Ball Settings")]
     [SerializeField] private float shootForce = 10.0f;
     [SerializeField] private float ballTippingTime = 0.1f;
-    [SerializeField] private float forceMultiplier = 100f;
+    [SerializeField] private float forceMultiplier = 5f;
 
 
     void Start() {
@@ -33,7 +35,7 @@ public class Ball : MonoBehaviour {
 
     public void Launch() {
         Debug.Log("Ball shot!");
-        GetComponent<Rigidbody>().AddForce(0, 0, -shootForce, ForceMode.Impulse);
+        _rb.AddForce(0, 0, -shootForce, ForceMode.Impulse);
     }
 
 
@@ -45,8 +47,9 @@ public class Ball : MonoBehaviour {
     }
 
     private void PushBall (float amount) {
-        if (amount == 0) {
+        if (amount > -0.1 && amount < 0.1) {
             _canTip = true;
+            _lastFrameTip = 0;
             direction = Direction.NONE;
             return;
         }
@@ -56,30 +59,33 @@ public class Ball : MonoBehaviour {
 
         if (_tipping && BallChangedDirection(direction, amount)) {
             Debug.Log("WENT OTHER WAY");
-            StopCoroutine(TipBall());
+            StopCoroutine(_tipCoroutine);
+            _rb.linearVelocity = Vector3.zero;
             _canTip = false;
+            _tipping = false;
             return;
         }
+
         if (!_tipping) {
-            StartCoroutine(TipBall());
+            _tipCoroutine = StartCoroutine(TipBall());
             direction = amount < 0 ? Direction.LEFT : Direction.RIGHT;
         }
-        //Debug.Log($"Receiving force {amount}, last tip {_lastFrameTip}");
+        // Debug.Log($"Receiving force {amount}, last tip {_lastFrameTip}");
         var tipAmount = amount - _lastFrameTip;
         _lastFrameTip += tipAmount;
         var forceVector = new Vector3(tipAmount * forceMultiplier, 0, 0);
         var newPosition = transform.position + forceVector; 
-        _rb.MovePosition(newPosition);
+        _rb.linearVelocity += forceVector;
         //Debug.Log($"Applying force {tipAmount}");
     }
 
     private bool BallChangedDirection(Direction currentDirection, float forceAmount) {
         if (currentDirection == Direction.NONE) {
-            return forceAmount != 0 ? true : false;
+            return forceAmount != 0;
         }
         
         var tipAmount = forceAmount - _lastFrameTip;
-        if (direction == Direction.LEFT) {
+        if (currentDirection == Direction.LEFT) {
            return tipAmount > 0 ? true : false; 
         }
            return tipAmount < 0 ? true : false; 
@@ -88,6 +94,7 @@ public class Ball : MonoBehaviour {
     private IEnumerator TipBall() {
         _tipping = true;
         yield return new WaitForSeconds(ballTippingTime);
+        _rb.linearVelocity = Vector3.zero;
         _canTip = false;
         _tipping = false;
     }
