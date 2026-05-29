@@ -67,7 +67,8 @@ public class Ball : MonoBehaviour {
         //Debug.Log($"Receiving force {amount}, last tip {_lastFrameTip}");
         var tipAmount = amount - _lastFrameTip;
         _lastFrameTip += tipAmount;
-        Vector3 newPosition = transform.position + new Vector3(tipAmount * forceMultiplier, 0, 0);
+        var forceVector = new Vector3(tipAmount * forceMultiplier, 0, 0);
+        var newPosition = transform.position + forceVector; 
         _rb.MovePosition(newPosition);
         //Debug.Log($"Applying force {tipAmount}");
     }
