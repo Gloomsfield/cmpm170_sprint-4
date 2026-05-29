@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 
@@ -43,10 +44,11 @@ public class Ball : MonoBehaviour {
         Debug.Log("Ball reset!");
         _rb.linearVelocity = Vector3.zero;
         _rb.angularVelocity = Vector3.zero;
-        transform.position = new Vector3(0, 6, 13);
+        transform.position = new Vector3(0, 10, -3);
     }
 
     private void PushBall (float amount) {
+        //if (amount < -0.8 || amount > 0.8) throw new ArgumentException("OVER ROTATION");
         if (amount > -0.1 && amount < 0.1) {
             _canTip = true;
             _lastFrameTip = 0;

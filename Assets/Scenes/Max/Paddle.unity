@@ -439,7 +439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ball
   shootForce: 10
   ballTippingTime: 0.1
-  forceMultiplier: 5
+  forceMultiplier: 15
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
