@@ -75,4 +75,10 @@ public class EventManager
     {
         pauseMenu?.Invoke();
     }
+    
+    public static event Action roundEnded;
+    public static void InvokeRoundEnded()
+    {
+        roundEnded?.Invoke();
+    }
 }

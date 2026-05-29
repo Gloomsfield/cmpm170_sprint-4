@@ -67,6 +67,7 @@ public class GameManager
 
     void EndRound()
     {
+        EventManager.InvokeRoundEnded();
         State = GameState.ROUNDEND;
 
         if (ballsLeft > 0)

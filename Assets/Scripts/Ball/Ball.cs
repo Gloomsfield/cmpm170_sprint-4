@@ -22,16 +22,24 @@ public class Ball : MonoBehaviour {
 
     void Start() {
         _rb = GetComponent<Rigidbody>();
+        EventManager.spawnBall += EnableFlippers;
+    }
+
+    void EnableFlippers() {
+        EventManager.rotation += PushBall;
+
     }
 
     void OnEnable() {
-        EventManager.rotation += PushBall;
         EventManager.reset += ResetBall;
     }
 
     void OnDisable() {
         EventManager.rotation -= PushBall;
         EventManager.reset -= ResetBall;
+        if (_tipCoroutine != null) {
+            StopCoroutine(_tipCoroutine);
+        }
     }
 
     public void Launch() {
@@ -48,7 +56,7 @@ public class Ball : MonoBehaviour {
     }
 
     private void PushBall (float amount) {
-        //if (amount < -0.8 || amount > 0.8) throw new ArgumentException("OVER ROTATION");
+        if (amount < -0.8 || amount > 0.8) EventManager.spawnBall -= EnableFlippers;
         if (amount > -0.1 && amount < 0.1) {
             _canTip = true;
             _lastFrameTip = 0;
@@ -60,7 +68,7 @@ public class Ball : MonoBehaviour {
         }
 
         if (_tipping && BallChangedDirection(direction, amount)) {
-            Debug.Log("WENT OTHER WAY");
+            //Debug.Log("WENT OTHER WAY");
             StopCoroutine(_tipCoroutine);
             _rb.linearVelocity = Vector3.zero;
             _canTip = false;
@@ -85,12 +93,12 @@ public class Ball : MonoBehaviour {
         if (currentDirection == Direction.NONE) {
             return forceAmount != 0;
         }
-        
+
         var tipAmount = forceAmount - _lastFrameTip;
         if (currentDirection == Direction.LEFT) {
-           return tipAmount > 0 ? true : false; 
+            return tipAmount > 0 ? true : false; 
         }
-           return tipAmount < 0 ? true : false; 
+        return tipAmount < 0 ? true : false; 
     }
 
     private IEnumerator TipBall() {
