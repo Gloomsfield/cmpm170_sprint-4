@@ -998,7 +998,7 @@
             "actions": [
                 {
                     "name": "Rotation",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "7b0564ae-9984-46e1-85d2-88d83fb594d3",
                     "expectedControlType": "Axis",
                     "processors": "",
@@ -1186,17 +1186,6 @@
                     "name": "",
                     "id": "4afa002c-ed0d-4029-83b3-add839a3fa7e",
                     "path": "<HID::Logitech G29 Driving Force Racing Wheel>/stick/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7a3c9a20-542c-4925-93e7-a0cc80aa0da3",
-                    "path": "<Mouse>/delta/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
