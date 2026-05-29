@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7394933dbc444f68f0b85c971e1b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  audioSourcePoolSize: 5
+  audioSourcePoolSize: 8
   soundEvents:
   - eventName: AgrassiveYelling
     clip: {fileID: 8300000, guid: 377931b32193b4ab0995dfb005850383, type: 3}
@@ -127,6 +127,26 @@ MonoBehaviour:
     volume: 1
     pitch: 0.5
   - eventName: OnlyMeVoiceLine
+    clip: {fileID: 8300000, guid: 6361ff8547a164ae0aabc4bb710f0106, type: 3}
+    volume: 1
+    pitch: 0.5
+  - eventName: RainStorm
+    clip: {fileID: 8300000, guid: e729a263a092343058a92ebc6bdc00e8, type: 3}
+    volume: 1
+    pitch: 0.5
+  - eventName: BumperClickClack
+    clip: {fileID: 8300000, guid: 72b33a814784b47f79e623c03a1e3b6d, type: 3}
+    volume: 1
+    pitch: 0.5
+  - eventName: Ping1
+    clip: {fileID: 8300000, guid: 70f244dd65aff45fbb732c40b6e470d1, type: 3}
+    volume: 1
+    pitch: 0.5
+  - eventName: Ping2
+    clip: {fileID: 8300000, guid: 2dab86a64e1be4ad88bede8148ac4ef3, type: 3}
+    volume: 1
+    pitch: 0.5
+  - eventName: OtherCristenSFX
     clip: {fileID: 8300000, guid: 6361ff8547a164ae0aabc4bb710f0106, type: 3}
     volume: 1
     pitch: 0.5
