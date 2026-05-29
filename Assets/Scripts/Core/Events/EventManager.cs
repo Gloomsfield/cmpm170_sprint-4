@@ -58,6 +58,27 @@ public class EventManager
         holdBall?.Invoke(ball);
     }
 
+	public static event Action<uint> increaseScore;
+	public static void InvokeScoreIncreased(uint delta) {
+		ScoreManager _ = ScoreManager.Instance;
+		increaseScore?.Invoke(delta);
+	}
+
+	public static event Action<uint> updateScore;
+	public static void InvokeScoreUpdated(uint newScore) {
+		updateScore?.Invoke(newScore);
+	}
+
+	public static event Action startBloodlust;
+	public static void InvokeStartBloodlust() {
+		startBloodlust?.Invoke();
+	}
+
+	public static event Action stopBloodlust;
+	public static void InvokeStopBloodlust() {
+		stopBloodlust?.Invoke();
+	}
+
     public static event Action<string> playAnimation;
     public static void InvokePlayAnimation(string animationName)
     {
