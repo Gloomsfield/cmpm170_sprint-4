@@ -19,7 +19,7 @@ public class ScoreManager {
 	}
 
 	private void IncreaseScore(uint delta) {
-		_score += delta;
+		_score += (uint)((float)delta * _scoreMultiplier);
 
 		EventManager.InvokeScoreUpdated(_score);
 	}
