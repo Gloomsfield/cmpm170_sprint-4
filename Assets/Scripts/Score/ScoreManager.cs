@@ -19,7 +19,6 @@ public class ScoreManager {
 	}
 
 	private void IncreaseScore(uint delta) {
-		Debug.Log(delta);
 		_score += delta;
 
 		EventManager.InvokeScoreUpdated(_score);
