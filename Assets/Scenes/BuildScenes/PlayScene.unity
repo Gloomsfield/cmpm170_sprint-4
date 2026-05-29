@@ -422,11 +422,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4441758232032595293, guid: f131b23bec86743278f19a90550b39bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.446
+      value: 7.438
       objectReference: {fileID: 0}
     - target: {fileID: 4441758232032595293, guid: f131b23bec86743278f19a90550b39bf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.396
+      value: 5.41
       objectReference: {fileID: 0}
     - target: {fileID: 4441758232032595293, guid: f131b23bec86743278f19a90550b39bf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -455,6 +455,10 @@ PrefabInstance:
     - target: {fileID: 4441758232032595293, guid: f131b23bec86743278f19a90550b39bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 3.627
+      objectReference: {fileID: 0}
+    - target: {fileID: 5451750376997557598, guid: f131b23bec86743278f19a90550b39bf, type: 3}
+      propertyPath: m_Axis.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1016,6 +1020,18 @@ PrefabInstance:
     - target: {fileID: 4441758232032595293, guid: f131b23bec86743278f19a90550b39bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 3.627
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614954580363036368, guid: f131b23bec86743278f19a90550b39bf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614954580363036368, guid: f131b23bec86743278f19a90550b39bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0023
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614954580363036368, guid: f131b23bec86743278f19a90550b39bf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4534,6 +4550,7 @@ GameObject:
   - component: {fileID: 1964894255}
   - component: {fileID: 1964894254}
   - component: {fileID: 1964894257}
+  - component: {fileID: 1964894258}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4659,6 +4676,19 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &1964894258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964894253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300f44e1cb41d4982b52d3f5520892e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CamShakeController
+  moveMultiplier: 1
 --- !u!1 &1995487203
 GameObject:
   m_ObjectHideFlags: 0

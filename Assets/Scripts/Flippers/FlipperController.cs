@@ -31,8 +31,8 @@ public class FlipperController : MonoBehaviour {
         SetMotorAttributes();
         SubscribeToTriggerEvent();
 
-        EventManager.roundEnded += () => { Debug.Log("Disabled");  _enabled = false; };
-        EventManager.spawnBall += () => _enabled = true;
+        EventManager.roundEnded += () => { _enabled = false; };
+        EventManager.spawnBall += () => { _enabled = true; Debug.Log("enabled"); };
     }
 
     void Update() {
