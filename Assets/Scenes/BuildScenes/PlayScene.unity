@@ -244,6 +244,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[18].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[19].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[20].pitch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7072634105029075614, guid: 6820d5097717440318706f86bd6a0438, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -5013,19 +5025,47 @@ MonoBehaviour:
     frames:
     - image: {fileID: 2800000, guid: beb5856c9dcbd8d4a813145f7e0523c6, type: 3}
       duration: 5
-      sounds: []
+      sounds:
+      - soundName: AgrassiveYelling
+        delay: 0
+      - soundName: FireSounds
+        delay: 0
     - image: {fileID: 2800000, guid: 150d1107c8324074ca98629b82780569, type: 3}
-      duration: 3
-      sounds: []
+      duration: 7
+      sounds:
+      - soundName: BushRustling
+        delay: 3
+      - soundName: Running1
+        delay: 0
+      - soundName: BeastVoiceLine
+        delay: 0
+      - soundName: Stabing1
+        delay: 7
     - image: {fileID: 2800000, guid: 7d32dd13efebcee4c8b29ae91aee0429, type: 3}
-      duration: 2
-      sounds: []
+      duration: 3
+      sounds:
+      - soundName: FireSounds
+        delay: 0
+      - soundName: AgrassiveYelling
+        delay: 0
     - image: {fileID: 2800000, guid: 865d276348059644e8239a445101005f, type: 3}
       duration: 3
-      sounds: []
+      sounds:
+      - soundName: Stabing1
+        delay: 0
+      - soundName: Stabing2
+        delay: 1
+      - soundName: Stabing2
+        delay: 2
+      - soundName: Stabing1
+        delay: 3
     - image: {fileID: 2800000, guid: 83b01ceee0013494491ed44bcd3d505f, type: 3}
-      duration: 2
-      sounds: []
+      duration: 4
+      sounds:
+      - soundName: NightAmbiance
+        delay: 0
+      - soundName: FliesBuzzingShort
+        delay: 0
   - animationName: Boulder
     frames:
     - image: {fileID: 2800000, guid: e45e5cf1c67718543984a6bcbc1cc687, type: 3}

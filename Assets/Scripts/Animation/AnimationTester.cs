@@ -40,3 +40,28 @@ public class AnimationTester : MonoBehaviour
         }
     }
 }
+
+// ALL Event calls I made:
+
+/*
+EventManager.InvokePlayAnimation("Fire");
+animation for bonfire
+
+EventManager.InvokePlayAnimation("Boulder");
+animation for boulder
+
+EventManager.InvokePlayReflectionAnimation("BoarFace");
+animation for happy boar (good score)
+
+EventManager.InvokePlayReflectionAnimation("BoarFace");
+animation for angry boar (lose ball)
+
+EventManager.InvokePlayReflectionAnimation("BoarFace");
+animation for boar speaking, whenever u want him to speak idk
+
+EventManager.InvokeRedLights();
+// red lights on when bloodlust mode (fire animation and x2 points)
+
+EventManager.InvokeNormalLights();
+// normal lights for red lights off
+*/
