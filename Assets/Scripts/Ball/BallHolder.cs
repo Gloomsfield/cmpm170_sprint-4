@@ -14,10 +14,10 @@ public class BallHolder : MonoBehaviour
     [SerializeField] float canTriggerDelay = 3.0f;
     [SerializeField] float delayBetweenSpawns = 1.0f;
 
-    
+    [Header("Balls to Spawn")]
+    [SerializeField] int ballsToSpawn = 2;
     bool canTrigger = true;
     int currentHits = 0;
-    int ballsToSpawn = 2;
     Ball heldBall;
     Rigidbody heldBallRigidbody;
 
