@@ -13,12 +13,13 @@ public class BallController : MonoBehaviour {
     private bool _tipping = false;
     private bool _canTip = true;
 
-    [SerializeField] private float forceMultiplier = 25f;
+    [SerializeField] private float forceMultiplier = 100f;
     [SerializeField] private float startThreshold = 0.1f;
 
     private void Start() {
         _rb = GetComponent<Rigidbody>();
 
+       // _rb.AddForce(new Vector3(100, 0, 0));
         EventManager.rotation += PushBall;
     }
 
@@ -27,7 +28,10 @@ public class BallController : MonoBehaviour {
             _canTip = true;
             return;
         }
-        if (!_canTip) return;
+        if (!_canTip) {
+            Debug.Log("CANNOT TIP");
+            return;
+        }
 
         StartCoroutine(TipBall());
         //_rotationReceivedLastFrame = true;
@@ -36,7 +40,7 @@ public class BallController : MonoBehaviour {
         var tipAmount = amount - _lastFrameTip;
         _lastFrameTip += tipAmount;
         //if (amount < ) return;
-        Vector3 forceVector = new Vector3(tipAmount * forceMultiplier * 15, 0, 0);
+        Vector3 forceVector = new Vector3(tipAmount * forceMultiplier * 20, 0, 0);
         _rb.AddForce(forceVector);
         Debug.Log($"Applying force {tipAmount}");
     }
@@ -51,7 +55,7 @@ public class BallController : MonoBehaviour {
     */
 
     private IEnumerator TipBall() {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.2f);
         _canTip = false;
     }
 
