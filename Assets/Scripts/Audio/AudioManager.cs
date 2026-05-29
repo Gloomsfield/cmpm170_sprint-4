@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
     {
         public string eventName;      // e.g., "BallInteract", "PlayerJump"
         public AudioClip clip;        // The audio file itself
-        [Range(0f, 1f)] public float volume;
+        [Range(0f, 5f)] public float volume;
         [Range(0.5f, 2f)] public float pitch;
     }
 
