@@ -57,4 +57,10 @@ public class EventManager
     {
         holdBall?.Invoke(ball);
     }
+
+    public static event Action pauseMenu;
+    public static void InvokePauseMenu()
+    {
+        pauseMenu?.Invoke();
+    }
 }

@@ -969,7 +969,7 @@
                 {
                     "name": "",
                     "id": "413e77ad-423b-4ffa-a62c-6d21ca4063c0",
-                    "path": "<Keyboard>/p",
+                    "path": "<Keyboard>/o",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -980,7 +980,29 @@
                 {
                     "name": "",
                     "id": "1ee69628-229b-4670-aea4-15d997b51407",
-                    "path": "<Keyboard>/p",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3d7a8b0c-8943-49c8-af3a-c6850e568e3c",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button25",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "013a640d-3e33-4596-9849-95b03e71c64a",
+                    "path": "<HID::Logitech G29 Driving Force Racing Wheel>/button10",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
