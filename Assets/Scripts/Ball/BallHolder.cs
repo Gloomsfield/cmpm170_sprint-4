@@ -16,6 +16,9 @@ public class BallHolder : MonoBehaviour
 
     [Header("Balls to Spawn")]
     [SerializeField] int ballsToSpawn = 2;
+
+    [Header("Object Name")]
+    [SerializeField] string objectName;
     bool canTrigger = true;
     int currentHits = 0;
     Ball heldBall;
