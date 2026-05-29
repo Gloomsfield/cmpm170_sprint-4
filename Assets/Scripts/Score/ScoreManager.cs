@@ -34,5 +34,15 @@ public class ScoreManager {
 
 		EventManager.InvokeScoreUpdated(_score);
 	}
+
+	public uint GetScore()
+	{
+		return _score;
+	}
+
+	public void ResetScore()
+	{
+		_score = 0;
+	}
 	
 }

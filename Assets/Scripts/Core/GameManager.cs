@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager
 {
@@ -28,7 +29,7 @@ public class GameManager
     {
         ballsLeft = startingBalls;
         activeBalls = 0;
-        //score = 0;
+        ScoreManager.Instance.ResetScore();
         State = GameState.PREGAME;
     }
 

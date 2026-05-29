@@ -1,7 +1,8 @@
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject bloodlust;
     [SerializeField] GameObject launch;
     [SerializeField] GameObject tilt;
+    [SerializeField] GameObject gameOver;
+
+    [Header("My brain doesnt know what name to make this")]
+    [SerializeField] TextMeshProUGUI text;
 
 
     void OnEnable()
@@ -63,6 +68,7 @@ public class UIManager : MonoBehaviour
     {
         spotLight.SetActive(false);
         pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
         EventSystem.current.SetSelectedGameObject(resumeButton);
     }
 
@@ -70,15 +76,19 @@ public class UIManager : MonoBehaviour
     {
         spotLight.SetActive(true);
         pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void Menu()
     {
+        /*Time.timeScale = 1f;
         GameManager.Instance.ResetGame();
         mainMenu.SetActive(true);
         pauseMenu.SetActive(false);
         spotLight.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(startButton);
+        EventSystem.current.SetSelectedGameObject(startButton);*/
+
+        SceneManager.LoadScene(0);
     }
 
     public void QuitGame()
@@ -100,6 +110,13 @@ public class UIManager : MonoBehaviour
         {
             launch.SetActive(show);
         }
+    }
+
+    public void GameOver()
+    {
+        uint score = ScoreManager.Instance.GetScore();
+        text.text = "Game Over! Score: " + score;
+        gameOver.SetActive(true);
     }
 
 }
