@@ -1,15 +1,17 @@
+using UnityEngine;
+
 public class ScoreManager {
     
 	private uint _score = 0;
 	private float _scoreMultiplier = 1.0f;
 
-	private ScoreManager _instance;
-	public ScoreManager Instance {
+	private static ScoreManager _instance;
+	public static ScoreManager Instance {
 		get {
 			if(_instance == null) {
 				_instance = new();
 				
-				EventManager.increaseScore += IncreaseScore;
+				EventManager.increaseScore += _instance.IncreaseScore;
 			}
 
 			return _instance;
@@ -17,6 +19,7 @@ public class ScoreManager {
 	}
 
 	private void IncreaseScore(uint delta) {
+		Debug.Log(delta);
 		_score += delta;
 
 		EventManager.InvokeScoreUpdated(_score);

@@ -60,6 +60,7 @@ public class EventManager
 
 	public static event Action<uint> increaseScore;
 	public static void InvokeScoreIncreased(uint delta) {
+		ScoreManager _ = ScoreManager.Instance;
 		increaseScore?.Invoke(delta);
 	}
 
