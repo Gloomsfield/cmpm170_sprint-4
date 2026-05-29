@@ -14,6 +14,12 @@ class Bumper : MonoBehaviour {
 			);
 
 			AudioManager.Instance.PlaySound("Ping1");
+
+			int randomInt = Random.Range(0, 10);
+			if(randomInt == 1)
+			{
+				EventManager.InvokePlayReflectionAnimation("BoarFaceVoice");
+			}
 		}
 	}
 

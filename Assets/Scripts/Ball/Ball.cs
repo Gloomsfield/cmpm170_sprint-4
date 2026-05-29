@@ -101,5 +101,6 @@ public class Ball : MonoBehaviour {
         _canTip = false;
         _tipping = false;
         EventManager.InvokeShowUIText(true, "TiltText");
+        EventManager.InvokePlayReflectionAnimation("BoarFaceAngry");
     }
 }
