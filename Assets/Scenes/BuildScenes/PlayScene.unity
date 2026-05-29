@@ -4110,6 +4110,28 @@ MonoBehaviour:
       sounds:
       - soundName: PigLaugh
         delay: 0
+      - soundName: FliesBuzzingShort
+        delay: 0
+  - animationName: BoarFaceAngry
+    frames:
+    - image: {fileID: 2800000, guid: 26406802e22b07646a27cbf4f6926835, type: 3}
+      duration: 5
+      fadeDuration: 3
+      sounds:
+      - soundName: PigScary
+        delay: 0
+      - soundName: FliesBuzzingShort
+        delay: 0
+  - animationName: BoarFaceVoice
+    frames:
+    - image: {fileID: 2800000, guid: 26406802e22b07646a27cbf4f6926835, type: 3}
+      duration: 5
+      fadeDuration: 3
+      sounds:
+      - soundName: OnlyMeVoiceLine
+        delay: 0
+      - soundName: FliesBuzzingShort
+        delay: 0
 --- !u!64 &1874475159
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5068,7 +5090,7 @@ MonoBehaviour:
       - soundName: Running1
         delay: 0
       - soundName: BeastVoiceLine
-        delay: 0
+        delay: 5
       - soundName: Stabing1
         delay: 7
     - image: {fileID: 2800000, guid: 7d32dd13efebcee4c8b29ae91aee0429, type: 3}
@@ -5099,17 +5121,35 @@ MonoBehaviour:
   - animationName: Boulder
     frames:
     - image: {fileID: 2800000, guid: e45e5cf1c67718543984a6bcbc1cc687, type: 3}
-      duration: 4
-      sounds: []
+      duration: 6
+      sounds:
+      - soundName: WindyAmbience
+        delay: 0
+      - soundName: BeSensibleVoiceLine
+        delay: 1
     - image: {fileID: 2800000, guid: 84e6afb250d96e344ac099b5ce4a9078, type: 3}
-      duration: 3
-      sounds: []
+      duration: 6
+      sounds:
+      - soundName: BoulderRolling
+        delay: 0
+      - soundName: HeavyBreathing
+        delay: 0
     - image: {fileID: 2800000, guid: c9c5926eeaf156443afa7d6a3b22e2d7, type: 3}
-      duration: 2
-      sounds: []
+      duration: 6
+      sounds:
+      - soundName: WindyAmbience
+        delay: 0
+      - soundName: BoulderRolling
+        delay: 0
     - image: {fileID: 2800000, guid: b2fd8c65ecdafb14880e785d0e9d85f3, type: 3}
-      duration: 5
-      sounds: []
+      duration: 6
+      sounds:
+      - soundName: BrutalCrushKill
+        delay: 0
+      - soundName: WindyAmbience
+        delay: 0
+      - soundName: FliesBuzzingShort
+        delay: 3
 --- !u!4 &2120065940
 Transform:
   m_ObjectHideFlags: 0
