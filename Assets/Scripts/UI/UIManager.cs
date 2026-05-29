@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject resumeButton;
     [SerializeField] GameObject menuButton;
     [SerializeField] GameObject creditButton;
+    [SerializeField] GameObject menuButton2;
 
     [Header("Light sources")]
     [SerializeField] GameObject spotLight;
@@ -34,12 +35,14 @@ public class UIManager : MonoBehaviour
     {
         EventManager.pauseMenu += PauseMenu;
         EventManager.showUIText += Showtext;
+        EventManager.gameOver += GameOver;
     }
 
     void OnDisable()
     {
         EventManager.pauseMenu -= PauseMenu;
         EventManager.showUIText -= Showtext;
+        EventManager.gameOver -= GameOver;
     }
 
     public void StartGame()
@@ -81,13 +84,7 @@ public class UIManager : MonoBehaviour
 
     public void Menu()
     {
-        /*Time.timeScale = 1f;
-        GameManager.Instance.ResetGame();
-        mainMenu.SetActive(true);
-        pauseMenu.SetActive(false);
-        spotLight.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(startButton);*/
-
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
@@ -115,8 +112,9 @@ public class UIManager : MonoBehaviour
     public void GameOver()
     {
         uint score = ScoreManager.Instance.GetScore();
-        text.text = "Game Over! Score: " + score;
+        text.text = "Game Over!\nScore: " + score;
         gameOver.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(startButton);
     }
 
 }

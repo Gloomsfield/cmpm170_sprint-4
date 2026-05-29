@@ -81,6 +81,7 @@ public class GameManager
         {
             State = GameState.ENDGAME;
             Debug.Log("Game Over!");
+            EventManager.InvokeGameOver();
         }
     }
 

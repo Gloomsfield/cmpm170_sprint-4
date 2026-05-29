@@ -118,12 +118,18 @@ public class EventManager
     public static event Action<bool, string> showUIText;
     public static void InvokeShowUIText(bool show, string name)
     {
-        showUIText.Invoke(show, name);
+        showUIText?.Invoke(show, name);
     }
 
     public static event Action<bool> particle;
     public static void InvokeParticle(bool show)
     {
-        particle.Invoke(show);
+        particle?.Invoke(show);
+    }
+
+    public static event Action gameOver;
+    public static void InvokeGameOver()
+    {
+        gameOver?.Invoke();
     }
 }
