@@ -68,6 +68,7 @@ public class BallHolder : MonoBehaviour
             EventManager.InvokeRedLights();
             EventManager.InvokeStartBloodlust();
             EventManager.InvokeShowUIText(true, "BloodLustText");
+            EventManager.InvokeParticle(true);
             StartCoroutine(BloodLustMode());
         }
         else if (objectName == "Cave")
@@ -120,6 +121,7 @@ public class BallHolder : MonoBehaviour
         EventManager.InvokeStopBloodlust();
         EventManager.InvokeNormalLights();
         EventManager.InvokeShowUIText(false, "BloodLustText");
+        EventManager.InvokeParticle(false);
     }
 
 }

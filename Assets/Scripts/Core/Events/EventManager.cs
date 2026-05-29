@@ -120,4 +120,10 @@ public class EventManager
     {
         showUIText.Invoke(show, name);
     }
+
+    public static event Action<bool> particle;
+    public static void InvokeParticle(bool show)
+    {
+        particle.Invoke(show);
+    }
 }
