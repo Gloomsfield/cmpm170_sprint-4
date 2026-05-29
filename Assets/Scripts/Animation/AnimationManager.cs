@@ -28,6 +28,7 @@ public class AnimationManager : MonoBehaviour
 
     [Header("Screen")]
     [SerializeField] Renderer screenRenderer;
+    [SerializeField] ScreenFader screenFader;
 
     [Header("Animations")]
     [SerializeField] List<ScreenAnimation> animations;
@@ -69,14 +70,17 @@ public class AnimationManager : MonoBehaviour
     {
         foreach (var frame in animation.frames)
         {
+            yield return StartCoroutine(screenFader.FadeToBlack(0.7f));
             screenRenderer.material.SetTexture("_BaseMap", frame.image);
+            yield return StartCoroutine(screenFader.FadeFromBlack(0.7f));
+
             foreach (var sound in frame.sounds)
             {
                 StartCoroutine(PlayDelayedSound(sound));
             }
-
             yield return new WaitForSeconds(frame.duration);
         }
+        yield return StartCoroutine(screenFader.FadeToBlack(.7f));
     }
 
     IEnumerator PlayDelayedSound(SoundCue soundCue)
