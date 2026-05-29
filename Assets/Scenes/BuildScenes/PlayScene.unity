@@ -3616,7 +3616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1376518882
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4734,6 +4734,9 @@ MonoBehaviour:
   menuButton: {fileID: 1198519000}
   creditButton: {fileID: 1281222748}
   spotLight: {fileID: 1995487203}
+  bloodlust: {fileID: 1376518881}
+  launch: {fileID: 2018726897}
+  tilt: {fileID: 2131585846}
 --- !u!4 &1742788830
 Transform:
   m_ObjectHideFlags: 0
@@ -5664,7 +5667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2018726898
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6035,7 +6038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2131585847
 RectTransform:
   m_ObjectHideFlags: 0

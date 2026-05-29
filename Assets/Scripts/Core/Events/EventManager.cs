@@ -114,4 +114,10 @@ public class EventManager
     {
         normalLights?.Invoke();
     }
+
+    public static event Action<bool, string> showUIText;
+    public static void InvokeShowUIText(bool show, string name)
+    {
+        showUIText.Invoke(show, name);
+    }
 }

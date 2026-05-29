@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -18,15 +19,22 @@ public class UIManager : MonoBehaviour
     [Header("Light sources")]
     [SerializeField] GameObject spotLight;
 
+    [Header("Text GameObjects")]
+    [SerializeField] GameObject bloodlust;
+    [SerializeField] GameObject launch;
+    [SerializeField] GameObject tilt;
+
 
     void OnEnable()
     {
         EventManager.pauseMenu += PauseMenu;
+        EventManager.showUIText += Showtext;
     }
 
     void OnDisable()
     {
         EventManager.pauseMenu -= PauseMenu;
+        EventManager.showUIText -= Showtext;
     }
 
     public void StartGame()
@@ -76,6 +84,22 @@ public class UIManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void Showtext(bool show, string name)
+    {
+        if(name == "BloodLustText")
+        {
+            bloodlust.SetActive(show);
+        }
+        else if (name == "TiltText")
+        {
+            tilt.SetActive(show);
+        }
+        else if (name == "LaunchText")
+        {
+            launch.SetActive(show);
+        }
     }
 
 }

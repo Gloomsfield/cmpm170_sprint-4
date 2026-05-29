@@ -31,6 +31,7 @@ public class BallSpawner : MonoBehaviour
         Ball ball = ballObject.GetComponent<Ball>();
         ballLauncher.SetBall(ball);
         GameManager.Instance.RegisterBall();
+        EventManager.InvokeShowUIText(true, "LaunchText");
     }
 
     void SpawnBallCave()
