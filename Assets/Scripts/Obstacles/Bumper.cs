@@ -12,6 +12,17 @@ class Bumper : MonoBehaviour {
 			collision.gameObject.GetComponent<Rigidbody>().AddForce(
 				delta * 800
 			);
+
+			int randomInt = Random.Range(1, 2);
+			if(randomInt == 1)
+			{
+				AudioManager.Instance.PlaySound("Ping1");
+			}
+			else if (randomInt == 2)
+			{
+				Debug.Log("Playsound 2");
+				AudioManager.Instance.PlaySound("Ping2");
+			}
 		}
 	}
 

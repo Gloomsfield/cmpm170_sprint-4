@@ -26,6 +26,7 @@ public class BallLauncher : MonoBehaviour
         canShoot = false;
         wallshootBlocker.isTrigger = true;
         StartCoroutine(EnableWall());
+        AudioManager.Instance.PlaySound("BumperClickClack");
         currentBall.Launch();
         EventManager.InvokeShowUIText(false, "LaunchText");
     }

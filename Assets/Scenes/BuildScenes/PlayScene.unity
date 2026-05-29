@@ -435,6 +435,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[23].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 071841d9ad2906940ac558c174749a8b, type: 3}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[24].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 13fe16708fc16d34d8f6d825967f573a, type: 3}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
       propertyPath: soundEvents.Array.data[18].pitch
       value: 1
       objectReference: {fileID: 0}
