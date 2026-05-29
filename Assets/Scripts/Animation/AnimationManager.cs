@@ -56,31 +56,37 @@ public class AnimationManager : MonoBehaviour
 
     void PlayAnimation(string animationName)
     {
-        if (!animationDictionary.ContainsKey(animationName))
-        {
-            Debug.LogWarning("Animation not found: " + animationName);
-            return;
-        }
-
         StopAllCoroutines();
         StartCoroutine(PlayAnimationCoroutine(animationDictionary[animationName]));
     }
 
     IEnumerator PlayAnimationCoroutine(ScreenAnimation animation)
     {
+        bool firstFrame = true;
         foreach (var frame in animation.frames)
         {
-            yield return StartCoroutine(screenFader.FadeToBlack(0.7f));
-            screenRenderer.material.SetTexture("_BaseMap", frame.image);
-            yield return StartCoroutine(screenFader.FadeFromBlack(0.7f));
+            if (firstFrame)
+            {
+                screenRenderer.material.SetTexture("_BaseMap", frame.image);
+                yield return StartCoroutine(screenFader.FadeFromBlack(0.7f));
+                firstFrame = false;
+            }
+            else
+            {
+                yield return StartCoroutine(screenFader.FadeToBlack(0.7f));
+                screenRenderer.material.SetTexture("_BaseMap", frame.image);
+                yield return StartCoroutine(screenFader.FadeFromBlack(0.7f));
+            }
 
             foreach (var sound in frame.sounds)
             {
                 StartCoroutine(PlayDelayedSound(sound));
             }
+
             yield return new WaitForSeconds(frame.duration);
         }
-        yield return StartCoroutine(screenFader.FadeToBlack(.7f));
+
+        yield return StartCoroutine(screenFader.FadeToBlack(0.7f));
     }
 
     IEnumerator PlayDelayedSound(SoundCue soundCue)
