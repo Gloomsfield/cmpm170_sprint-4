@@ -25,6 +25,7 @@ public class Ball : MonoBehaviour {
         EventManager.spawnBall += EnableFlippers;
     }
 
+
     void EnableFlippers() {
         EventManager.rotation += PushBall;
 
@@ -32,14 +33,15 @@ public class Ball : MonoBehaviour {
 
     void OnEnable() {
         EventManager.reset += ResetBall;
+        _rb = GetComponent<Rigidbody>();
+        EventManager.spawnBall += EnableFlippers;
     }
 
-    void OnDisable() {
+    void OnDestroy() {
+        Debug.Log("thing destroyed");
         EventManager.rotation -= PushBall;
         EventManager.reset -= ResetBall;
-        if (_tipCoroutine != null) {
-            StopCoroutine(_tipCoroutine);
-        }
+        StopAllCoroutines();
     }
 
     public void Launch() {
@@ -102,6 +104,7 @@ public class Ball : MonoBehaviour {
     }
 
     private IEnumerator TipBall() {
+        if (this == null) yield break;
         _tipping = true;
         yield return new WaitForSeconds(ballTippingTime);
         _rb.linearVelocity = Vector3.zero;
