@@ -28,5 +28,15 @@ public class AnimationTester : MonoBehaviour
 
             Debug.Log("Played Boar");
         }
+
+        // Press L to test boulder animation
+        if (Keyboard.current.lKey.wasPressedThisFrame)
+        {
+            EventManager.InvokeRedLights();
+        }
+        if (Keyboard.current.tKey.wasPressedThisFrame)
+        {
+            EventManager.InvokeNormalLights();
+        }
     }
 }

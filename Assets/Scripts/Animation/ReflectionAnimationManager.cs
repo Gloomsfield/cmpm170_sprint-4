@@ -69,7 +69,7 @@ public class ReflectionAnimationManager : MonoBehaviour
         foreach (var frame in animation.frames)
         {
             screenMaterial.SetTexture("_BaseMap", frame.image);
-            yield return StartCoroutine(FadeAlpha(0f, 1f, frame.fadeDuration));
+            yield return StartCoroutine(FadeAlpha(0f, .6f, frame.fadeDuration));
 
             foreach (var sound in frame.sounds)
             {
@@ -77,7 +77,7 @@ public class ReflectionAnimationManager : MonoBehaviour
             }
 
             yield return new WaitForSeconds(frame.duration);
-            yield return StartCoroutine(FadeAlpha(1f, 0f, frame.fadeDuration));
+            yield return StartCoroutine(FadeAlpha(.6f, 0f, frame.fadeDuration));
         }
     }
 

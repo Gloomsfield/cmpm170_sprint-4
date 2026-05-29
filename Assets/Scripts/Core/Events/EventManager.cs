@@ -96,4 +96,16 @@ public class EventManager
     {
         pauseMenu?.Invoke();
     }
+
+    public static event Action redLights;
+    public static void InvokeRedLights()
+    {
+        redLights?.Invoke();
+    }
+
+    public static event Action normalLights;
+    public static void InvokeNormalLights()
+    {
+        normalLights?.Invoke();
+    }
 }
