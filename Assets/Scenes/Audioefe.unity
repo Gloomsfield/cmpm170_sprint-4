@@ -6531,6 +6531,90 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.size
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[21].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e729a263a092343058a92ebc6bdc00e8, type: 3}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[22].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 72b33a814784b47f79e623c03a1e3b6d, type: 3}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[23].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 70f244dd65aff45fbb732c40b6e470d1, type: 3}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[24].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2dab86a64e1be4ad88bede8148ac4ef3, type: 3}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[25].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6361ff8547a164ae0aabc4bb710f0106, type: 3}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[21].pitch
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[22].pitch
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[23].pitch
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[24].pitch
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[25].pitch
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[21].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[22].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[23].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[24].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[25].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[21].eventName
+      value: RainStorm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[22].eventName
+      value: BumperClickClack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[23].eventName
+      value: Ping1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[24].eventName
+      value: Ping2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689804265386767175, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: soundEvents.Array.data[25].eventName
+      value: OtherCristenSFX
+      objectReference: {fileID: 0}
     - target: {fileID: 7072634105029075614, guid: 6820d5097717440318706f86bd6a0438, type: 3}
       propertyPath: m_Name
       value: AudioManager
