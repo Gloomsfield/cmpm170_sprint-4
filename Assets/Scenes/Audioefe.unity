@@ -5645,124 +5645,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659107874}
   m_CullTransparentMesh: 1
---- !u!1 &1739323845
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1739323847}
-  - component: {fileID: 1739323846}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1739323846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739323845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db7394933dbc444f68f0b85c971e1b3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  audioSourcePoolSize: 5
-  soundEvents:
-  - eventName: AgrassiveYelling
-    clip: {fileID: 8300000, guid: 377931b32193b4ab0995dfb005850383, type: 3}
-    volume: 1
-    pitch: 1
-  - eventName: Running1
-    clip: {fileID: 8300000, guid: ef9cf8f087f53409694cf78f3cfb2cd9, type: 3}
-    volume: 1
-    pitch: 1
-  - eventName: Running2
-    clip: {fileID: 8300000, guid: 93c55bfb2457f4453a646fad8cf05cbb, type: 3}
-    volume: 0
-    pitch: 0
-  - eventName: Stabing1
-    clip: {fileID: 8300000, guid: 9390d80cda15b4f1f95d3c9fdb70b46a, type: 3}
-    volume: 1
-    pitch: 1
-  - eventName: Stabing2
-    clip: {fileID: 8300000, guid: d32f15e97358e404194922a54ff3744b, type: 3}
-    volume: 0
-    pitch: 0
-  - eventName: BrutalKillCrush
-    clip: {fileID: 8300000, guid: f77671802c01343a8bf4f575f973b732, type: 3}
-    volume: 1
-    pitch: 1
-  - eventName: FireSounds
-    clip: {fileID: 8300000, guid: dabb81ff4fdb249c98ca052f63a7e519, type: 3}
-    volume: 1
-    pitch: 1
-  - eventName: HeavyBreathing
-    clip: {fileID: 8300000, guid: af7689a16dbe943a3b77e6c55dbca1cc, type: 3}
-    volume: 1
-    pitch: 1
-  - eventName: FliesBuzzingLong
-    clip: {fileID: 8300000, guid: 766684e0e3e7e4ee8862512dac60e9f3, type: 3}
-    volume: 1
-    pitch: 1
-  - eventName: FliesBuzzingShort
-    clip: {fileID: 8300000, guid: a29e1b682fad8471baa957e02a2a6d3e, type: 3}
-    volume: 1
-    pitch: 1
-  - eventName: WindyAmbiance
-    clip: {fileID: 8300000, guid: 804911dd8bb58419eb0724010ef916d2, type: 3}
-    volume: 1
-    pitch: 1
-  - eventName: NightAmbiance
-    clip: {fileID: 8300000, guid: 3d03704bcf34d4730a4cfbbd2d8e4679, type: 3}
-    volume: 1
-    pitch: 1
-  - eventName: ScaryNightAmbiance
-    clip: {fileID: 8300000, guid: 86581efbd3c904eeb8522e6fa1087bf5, type: 3}
-    volume: 1
-    pitch: 1
-  - eventName: BushRustling
-    clip: {fileID: 8300000, guid: 8b2b4b35696ab471aa05ba1c8e5e7636, type: 3}
-    volume: 1
-    pitch: 1.36
-  - eventName: Victory
-    clip: {fileID: 8300000, guid: df5146e07dc4d47cc92672f729baf901, type: 3}
-    volume: 1
-    pitch: 1
-  - eventName: PigLaugh
-    clip: {fileID: 8300000, guid: 86581efbd3c904eeb8522e6fa1087bf5, type: 3}
-    volume: 1
-    pitch: 0.5
-  - eventName: PigScary
-    clip: {fileID: 8300000, guid: d166768171dd0490d8ae88fef9ed7720, type: 3}
-    volume: 1
-    pitch: 0.5
-  - eventName: BoulderRolling
-    clip: {fileID: 8300000, guid: cd8bd3570865e4ee7bc277f56ebff2c6, type: 3}
-    volume: 1
-    pitch: 0.5
---- !u!4 &1739323847
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739323845}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09524, y: 12.5, z: -0.64856}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1746723844
 GameObject:
   m_ObjectHideFlags: 0
@@ -6656,6 +6538,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034142976}
   m_CullTransparentMesh: 1
+--- !u!1001 &4481990231468322191
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1277278146518483345, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.09524
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.64856
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6820d5097717440318706f86bd6a0438, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -6667,6 +6606,6 @@ SceneRoots:
   - {fileID: 1329927957}
   - {fileID: 685279665}
   - {fileID: 836492837}
-  - {fileID: 1739323847}
+  - {fileID: 4481990231468322191}
   - {fileID: 965925898}
   - {fileID: 1094537705}
