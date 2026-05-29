@@ -132,4 +132,10 @@ public class EventManager
     {
         gameOver?.Invoke();
     }
+
+    public static event Action flickerLight;
+    public static void InvokeFlickerLight()
+    {
+        flickerLight?.Invoke();
+    }
 }
