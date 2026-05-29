@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2ab2a52dff7e34b08bff7345dfc7e8f8, type: 2}
+  - {fileID: 2100000, guid: cd89da7db31961d45bd39509db700445, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,5 +154,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ball
   shootForce: 30
-  rotationForce: 10
   ballTippingTime: 0.5
+  forceMultiplier: 5

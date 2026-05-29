@@ -83,4 +83,13 @@ public class AudioManager : MonoBehaviour
         // If all sources are busy, grab the first one or expand pool
         return _pool[0]; 
     }
+
+    public void StopAllSounds()
+    {
+        foreach (var source in _pool)
+        {
+            source.Stop();
+            source.clip = null;
+        }
+    }
 }

@@ -419,6 +419,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -760992709978562266, guid: d7385984a428c1d429351dfa7cfbeab1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 834d9060d2fca674caf4bca60d8d4c24, type: 2}
+    - target: {fileID: -760992709978562266, guid: d7385984a428c1d429351dfa7cfbeab1, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 96d140b013ebf4ea8a23a581725c8d5e, type: 2}
     - target: {fileID: 919132149155446097, guid: d7385984a428c1d429351dfa7cfbeab1, type: 3}
       propertyPath: m_Name
       value: pin_V2
@@ -447,6 +455,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.53
       objectReference: {fileID: 0}
+    - target: {fileID: 7062392571868533304, guid: d7385984a428c1d429351dfa7cfbeab1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 56aae9796e834d74d91ad012115f2422, type: 2}
     - target: {fileID: 8557873241871352914, guid: d7385984a428c1d429351dfa7cfbeab1, type: 3}
       propertyPath: m_LocalScale.x
       value: 50
@@ -563,6 +575,10 @@ PrefabInstance:
       propertyPath: m_Axis.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8850421911371011229, guid: f131b23bec86743278f19a90550b39bf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e869332da1021b54b9e231df3fd14084, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1215,6 +1231,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.005
       objectReference: {fileID: 0}
+    - target: {fileID: 8850421911371011229, guid: f131b23bec86743278f19a90550b39bf, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e869332da1021b54b9e231df3fd14084, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1420,7 +1440,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 451554508363958019, guid: 5f1d35ee233f44fc2bc6ffb964a84c4c, type: 3}
       propertyPath: hitsRequired
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 451554508363958019, guid: 5f1d35ee233f44fc2bc6ffb964a84c4c, type: 3}
+      propertyPath: animationDelay
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 2069236522293197959, guid: 5f1d35ee233f44fc2bc6ffb964a84c4c, type: 3}
       propertyPath: m_Name
@@ -3177,6 +3201,7 @@ MonoBehaviour:
   holdDuration: 5
   canTriggerDelay: 3
   delayBetweenSpawns: 1
+  animationDelay: 22
   ballsToSpawn: 0
   objectName: CampFire
 --- !u!135 &1318025538

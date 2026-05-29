@@ -13,6 +13,7 @@ public class BallHolder : MonoBehaviour
     [SerializeField] float holdDuration = 5.0f;
     [SerializeField] float canTriggerDelay = 3.0f;
     [SerializeField] float delayBetweenSpawns = 1.0f;
+    [SerializeField] float animationDelay;
 
     [Header("Balls to Spawn")]
     [SerializeField] int ballsToSpawn = 2;
@@ -61,6 +62,18 @@ public class BallHolder : MonoBehaviour
         heldBall.transform.position = holdPosition.position;
         heldBall.transform.rotation = holdPosition.rotation;
 
+        if(objectName == "CampFire")
+        {
+            EventManager.InvokePlayAnimation("Fire");
+            EventManager.InvokeRedLights();
+            EventManager.InvokeStartBloodlust();
+            StartCoroutine(BloodLustMode());
+        }
+        else if (objectName == "Cave")
+        {
+            EventManager.InvokePlayAnimation("Boulder");
+        }
+
         canTrigger = false;
 
         Debug.Log("Ball held!");
@@ -98,6 +111,13 @@ public class BallHolder : MonoBehaviour
     {
         yield return new WaitForSeconds(canTriggerDelay);
         canTrigger = true;
+    }
+
+    IEnumerator BloodLustMode()
+    {
+        yield return new WaitForSeconds(animationDelay);
+        EventManager.InvokeStopBloodlust();
+        EventManager.InvokeNormalLights();
     }
 
 }

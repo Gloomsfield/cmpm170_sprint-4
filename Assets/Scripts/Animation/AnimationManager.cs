@@ -57,6 +57,7 @@ public class AnimationManager : MonoBehaviour
     void PlayAnimation(string animationName)
     {
         StopAllCoroutines();
+        AudioManager.Instance.StopAllSounds();
         StartCoroutine(PlayAnimationCoroutine(animationDictionary[animationName]));
     }
 
