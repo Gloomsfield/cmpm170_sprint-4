@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1277278146518483345
+--- !u!1 &7072634105029075614
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6727451325056182183}
-  - component: {fileID: 8520770123777657367}
+  - component: {fileID: 3270998484690575747}
+  - component: {fileID: 5689804265386767175}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6727451325056182183
+--- !u!4 &3270998484690575747
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277278146518483345}
+  m_GameObject: {fileID: 7072634105029075614}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.09524, y: 12.5, z: -0.64856}
@@ -32,13 +32,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8520770123777657367
+--- !u!114 &5689804265386767175
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277278146518483345}
+  m_GameObject: {fileID: 7072634105029075614}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db7394933dbc444f68f0b85c971e1b3b, type: 3}
@@ -56,16 +56,16 @@ MonoBehaviour:
     pitch: 1
   - eventName: Running2
     clip: {fileID: 8300000, guid: 93c55bfb2457f4453a646fad8cf05cbb, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
   - eventName: Stabing1
     clip: {fileID: 8300000, guid: 9390d80cda15b4f1f95d3c9fdb70b46a, type: 3}
     volume: 1
     pitch: 1
   - eventName: Stabing2
     clip: {fileID: 8300000, guid: d32f15e97358e404194922a54ff3744b, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
   - eventName: BrutalKillCrush
     clip: {fileID: 8300000, guid: f77671802c01343a8bf4f575f973b732, type: 3}
     volume: 1
@@ -116,5 +116,17 @@ MonoBehaviour:
     pitch: 0.5
   - eventName: BoulderRolling
     clip: {fileID: 8300000, guid: cd8bd3570865e4ee7bc277f56ebff2c6, type: 3}
+    volume: 1
+    pitch: 0.5
+  - eventName: BeastVoiceLine
+    clip: {fileID: 8300000, guid: b4f11a2542387464881118fc5280b93f, type: 3}
+    volume: 1
+    pitch: 0.5
+  - eventName: BeSensibleVoiceLine
+    clip: {fileID: 8300000, guid: 281abed7072d2438cb2f521ee13df204, type: 3}
+    volume: 1
+    pitch: 0.5
+  - eventName: OnlyMeVoiceLine
+    clip: {fileID: 8300000, guid: 6361ff8547a164ae0aabc4bb710f0106, type: 3}
     volume: 1
     pitch: 0.5
