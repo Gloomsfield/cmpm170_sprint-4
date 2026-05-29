@@ -6538,7 +6538,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034142976}
   m_CullTransparentMesh: 1
---- !u!1001 &4481990231468322191
+--- !u!1001 &6938272778718701733
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -6546,65 +6546,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1277278146518483345, guid: 6820d5097717440318706f86bd6a0438, type: 3}
-      propertyPath: m_Name
-      value: AudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+    - target: {fileID: 3270998484690575747, guid: 6820d5097717440318706f86bd6a0438, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.09524
       objectReference: {fileID: 0}
-    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+    - target: {fileID: 3270998484690575747, guid: 6820d5097717440318706f86bd6a0438, type: 3}
       propertyPath: m_LocalPosition.y
       value: 12.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+    - target: {fileID: 3270998484690575747, guid: 6820d5097717440318706f86bd6a0438, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.64856
       objectReference: {fileID: 0}
-    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+    - target: {fileID: 3270998484690575747, guid: 6820d5097717440318706f86bd6a0438, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+    - target: {fileID: 3270998484690575747, guid: 6820d5097717440318706f86bd6a0438, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+    - target: {fileID: 3270998484690575747, guid: 6820d5097717440318706f86bd6a0438, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+    - target: {fileID: 3270998484690575747, guid: 6820d5097717440318706f86bd6a0438, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+    - target: {fileID: 3270998484690575747, guid: 6820d5097717440318706f86bd6a0438, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+    - target: {fileID: 3270998484690575747, guid: 6820d5097717440318706f86bd6a0438, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6727451325056182183, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+    - target: {fileID: 3270998484690575747, guid: 6820d5097717440318706f86bd6a0438, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8520770123777657367, guid: 6820d5097717440318706f86bd6a0438, type: 3}
-      propertyPath: soundEvents.Array.data[2].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8520770123777657367, guid: 6820d5097717440318706f86bd6a0438, type: 3}
-      propertyPath: soundEvents.Array.data[4].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8520770123777657367, guid: 6820d5097717440318706f86bd6a0438, type: 3}
-      propertyPath: soundEvents.Array.data[2].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8520770123777657367, guid: 6820d5097717440318706f86bd6a0438, type: 3}
-      propertyPath: soundEvents.Array.data[4].volume
-      value: 1
+    - target: {fileID: 7072634105029075614, guid: 6820d5097717440318706f86bd6a0438, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6622,6 +6606,6 @@ SceneRoots:
   - {fileID: 1329927957}
   - {fileID: 685279665}
   - {fileID: 836492837}
-  - {fileID: 4481990231468322191}
+  - {fileID: 6938272778718701733}
   - {fileID: 965925898}
   - {fileID: 1094537705}
