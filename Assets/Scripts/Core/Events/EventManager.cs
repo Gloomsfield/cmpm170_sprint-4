@@ -58,6 +58,18 @@ public class EventManager
         holdBall?.Invoke(ball);
     }
 
+    public static event Action<string> playAnimation;
+    public static void InvokePlayAnimation(string animationName)
+    {
+        playAnimation?.Invoke(animationName);
+    }
+
+    public static event Action<string> playReflectionAnimation;
+    public static void InvokePlayReflectionAnimation(string animationName)
+    {
+        playReflectionAnimation?.Invoke(animationName);
+    }
+    
     public static event Action pauseMenu;
     public static void InvokePauseMenu()
     {
