@@ -1,106 +1,75 @@
 using UnityEngine;
 using System.Collections;
 
-public class Ball : MonoBehaviour
-{
-    Rigidbody ballRigidbody;
+public class Ball : MonoBehaviour {
+
+    private Rigidbody _rb;
+    private float _lastFrameTip = 0;
+    private bool _canTip = true;
 
     [Header("Ball Settings")]
-    [SerializeField] float shootForce = 10.0f;
-    [SerializeField] float rotationForce = 5.0f;
-    [SerializeField] float ballTippingTime = 2.0f;
-    float rotation;
-    bool ballTipping = false;
-    bool ballTippedTooMuch = false;
-    Coroutine tippingCoroutine;
+    [SerializeField] private float shootForce = 10.0f;
+    [SerializeField] private float ballTippingTime = 0.1f;
+    [SerializeField] private float forceMultiplier = 100f;
 
-    void Start()
-    {
-        ballRigidbody = GetComponent<Rigidbody>();
+
+    void Start() {
+        _rb = GetComponent<Rigidbody>();
     }
 
-    void OnEnable()
-    {
+    void OnEnable() {
         //EventManager.shootBall += ShootBall;
-        EventManager.rotation += GetRotation;
-        EventManager.rotationAD += GetRotationAD;
+        //EventManager.rotation += GetRotation;
+        //EventManager.rotationAD += GetRotationAD;
+        EventManager.rotation += PushBall;
         EventManager.reset += ResetBall;
     }
 
-    void OnDisable()
-    {
+    void OnDisable() {
         //EventManager.shootBall -= ShootBall;
-        EventManager.rotation -= GetRotation;
-        EventManager.rotationAD -= GetRotationAD;
+        //EventManager.rotation -= GetRotation;
+        //EventManager.rotationAD -= GetRotationAD;
+        //EventManager.reset -= ResetBall;
+        EventManager.rotation -= PushBall;
         EventManager.reset -= ResetBall;
     }
 
-    public void Launch()
-    {
+    public void Launch() {
         Debug.Log("Ball shot!");
         GetComponent<Rigidbody>().AddForce(0, 0, -shootForce, ForceMode.Impulse);
     }
 
-    void GetRotation(float rotationValue)
-    {
-        rotation = rotationValue;
 
-        if (!ballTipping && (rotationValue < -0.1f || rotationValue > 0.1f))
-        {
-            //Debug.Log("Ball should BE tipping");
-            ballTipping = true;
-            tippingCoroutine = StartCoroutine(BallTipToMuch());
-        }
-        else if (ballTipping && (rotationValue > -0.1f && rotationValue < 0.1f))
-        {
-            //Debug.Log("Ball should not be tipping");
-            ballTipping = false;
-
-            if (tippingCoroutine != null)
-            {
-                StopCoroutine(tippingCoroutine);
-                tippingCoroutine = null;
-            }
-        }
-
-        //Debug.Log("Ball rotated: " + rotationValue);
-    }
-
-    void GetRotationAD(float rotationValue)
-    {
-        rotation = rotationValue;
-        //Debug.Log("Ball rotated AD: " + rotationValue);
-    }
-
-    void ResetBall()
-    {
+    void ResetBall() {
         Debug.Log("Ball reset!");
-        ballRigidbody.linearVelocity = Vector3.zero;
-        ballRigidbody.angularVelocity = Vector3.zero;
+        _rb.linearVelocity = Vector3.zero;
+        _rb.angularVelocity = Vector3.zero;
         transform.position = new Vector3(0, 6, 13);
-        ballTippedTooMuch = false;
     }
 
-    void Update()
-    {
-        if (!ballTippedTooMuch)
-        {
-            ApplyRotation();
+    private void PushBall (float amount) {
+        if (amount == 0) {
+            _canTip = true;
+            return;
         }
-;
+        if (!_canTip) {
+            Debug.Log("CANNOT TIP");
+            return;
+        }
+
+        StartCoroutine(TipBall());
+        Debug.Log($"Receiving force {amount}, last tip {_lastFrameTip}");
+        var tipAmount = amount - _lastFrameTip;
+        _lastFrameTip += tipAmount;
+        Vector3 forceVector = transform.position + new Vector3(tipAmount * forceMultiplier, 0, 0);
+        _rb.MovePosition(forceVector);
+        //_rb.AddForce(forceVector);
+        //Debug.Log($"Applying force {tipAmount}");
     }
 
-    void ApplyRotation()
-    {
-        transform.Translate(new Vector3(rotation * rotationForce, 0, 0) * Time.deltaTime);
-    }
 
-    IEnumerator BallTipToMuch()
-    {
-        ballTipping = true;
+    private IEnumerator TipBall() {
         yield return new WaitForSeconds(ballTippingTime);
-        // TODO: Change this to a kill pinball function or something that stops all controls and resets the ball after it falls off the table
-        ballTippedTooMuch = true;
-        Debug.Log("Ball tipped too much!");
+        _canTip = false;
     }
 }
