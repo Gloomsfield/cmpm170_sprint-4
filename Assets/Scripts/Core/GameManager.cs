@@ -61,6 +61,7 @@ public class GameManager
 
         if (activeBalls == 0)
         {
+            EventManager.InvokeShowUIText(false, "TiltText");
             EndRound();
         }
     }

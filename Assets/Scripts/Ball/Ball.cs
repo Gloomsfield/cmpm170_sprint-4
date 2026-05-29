@@ -100,5 +100,6 @@ public class Ball : MonoBehaviour {
         _rb.linearVelocity = Vector3.zero;
         _canTip = false;
         _tipping = false;
+        EventManager.InvokeShowUIText(true, "TiltText");
     }
 }

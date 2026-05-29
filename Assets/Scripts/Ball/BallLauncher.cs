@@ -27,6 +27,7 @@ public class BallLauncher : MonoBehaviour
         wallshootBlocker.isTrigger = true;
         StartCoroutine(EnableWall());
         currentBall.Launch();
+        EventManager.InvokeShowUIText(false, "LaunchText");
     }
 
     public void SetBall(Ball ball)
