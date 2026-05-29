@@ -1,8 +1,10 @@
 using UnityEngine;
+using System.Collections;
 
 public class BallLauncher : MonoBehaviour
 {
     [SerializeField] Ball currentBall;
+    [SerializeField] Collider wallshootBlocker;
 
     bool canShoot = false;
 
@@ -22,6 +24,8 @@ public class BallLauncher : MonoBehaviour
         if (currentBall == null) return;
 
         canShoot = false;
+        wallshootBlocker.isTrigger = true;
+        StartCoroutine(EnableWall());
         currentBall.Launch();
     }
 
@@ -35,5 +39,12 @@ public class BallLauncher : MonoBehaviour
     {
         currentBall = null;
         canShoot = false;
+    }
+
+    IEnumerator EnableWall()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Debug.Log("WAll triggered");
+        wallshootBlocker.isTrigger = false;
     }
 }

@@ -20,5 +20,13 @@ public class AnimationTester : MonoBehaviour
 
             Debug.Log("Played Boulder");
         }
+
+        // Press o to test boulder animation
+        if (Keyboard.current.oKey.wasPressedThisFrame)
+        {
+            EventManager.InvokePlayReflectionAnimation("BoarFace");
+
+            Debug.Log("Played Boar");
+        }
     }
 }

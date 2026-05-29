@@ -50,4 +50,9 @@ public class Controller : MonoBehaviour
     {
         EventManager.InvokeSpawnBall();
     }
+
+    void OnPauseMenu()
+    {
+        EventManager.InvokePauseMenu();
+    }
 }

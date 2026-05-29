@@ -84,4 +84,16 @@ public class EventManager
     {
         playAnimation?.Invoke(animationName);
     }
+
+    public static event Action<string> playReflectionAnimation;
+    public static void InvokePlayReflectionAnimation(string animationName)
+    {
+        playReflectionAnimation?.Invoke(animationName);
+    }
+    
+    public static event Action pauseMenu;
+    public static void InvokePauseMenu()
+    {
+        pauseMenu?.Invoke();
+    }
 }
