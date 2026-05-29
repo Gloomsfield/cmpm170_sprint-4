@@ -19,6 +19,8 @@ public class FlipperController : MonoBehaviour {
 
     private bool _buttonHeld = false;
 
+    private bool _enabled = false;
+
     void Start() {
          //flipperOff = InputSystem.actions.FindAction("LeftPaddle");
          //flipperOff.canceled += (_) => Debug.Log("it was cancelled");
@@ -28,9 +30,13 @@ public class FlipperController : MonoBehaviour {
 
         SetMotorAttributes();
         SubscribeToTriggerEvent();
+
+        EventManager.roundEnded += () => { Debug.Log("Disabled");  _enabled = false; };
+        EventManager.spawnBall += () => _enabled = true;
     }
 
     void Update() {
+        if (!_enabled) return;
         if (_buttonHeld) return;
         if (!(_hingeJoint.angle >= maxFlipperAngle - 5)) return;
 
@@ -39,8 +45,9 @@ public class FlipperController : MonoBehaviour {
     }
 
     private void EnableFlipper() {
+        if (!_enabled) return;
         _buttonHeld = true;
-        if (_hingeJoint.angle > 0) return;
+        if (_hingeJoint.angle > 5) return;
 
         _jointMotor.targetVelocity = flipperVelocity;
         _jointMotor.force = flipperVelocity;

@@ -20,25 +20,13 @@ public class Ball : MonoBehaviour {
     [SerializeField] private float forceMultiplier = 5f;
 
 
-    void Start() {
-        _rb = GetComponent<Rigidbody>();
-        EventManager.spawnBall += EnableFlippers;
-    }
-
-
-    void EnableFlippers() {
-        EventManager.rotation += PushBall;
-
-    }
-
     void OnEnable() {
         EventManager.reset += ResetBall;
+        EventManager.rotation += PushBall;
         _rb = GetComponent<Rigidbody>();
-        EventManager.spawnBall += EnableFlippers;
     }
 
     void OnDestroy() {
-        Debug.Log("thing destroyed");
         EventManager.rotation -= PushBall;
         EventManager.reset -= ResetBall;
         StopAllCoroutines();
@@ -58,7 +46,9 @@ public class Ball : MonoBehaviour {
     }
 
     private void PushBall (float amount) {
-        if (amount < -0.8 || amount > 0.8) EventManager.spawnBall -= EnableFlippers;
+        if (amount < -0.8 || amount > 0.8) { EventManager.InvokeRoundEnded(); 
+            Debug.Log("OVERTURN");
+        }
         if (amount > -0.1 && amount < 0.1) {
             _canTip = true;
             _lastFrameTip = 0;
