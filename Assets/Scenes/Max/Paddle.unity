@@ -645,8 +645,8 @@ Transform:
   m_GameObject: {fileID: 433407785}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7923602, z: -0.6100535, w: 0}
-  m_LocalPosition: {x: -0.1, y: 10.996, z: 1.8223}
-  m_LocalScale: {x: 8.739, y: 7.7076, z: 1}
+  m_LocalPosition: {x: 0.0466, y: 11.57, z: 0.11}
+  m_LocalScale: {x: 9.072108, y: 16.489462, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -667,8 +667,8 @@ MonoBehaviour:
   animations:
   - animationName: BoarFace
     frames:
-    - image: {fileID: 2800000, guid: beb5856c9dcbd8d4a813145f7e0523c6, type: 3}
-      duration: 3
+    - image: {fileID: 2800000, guid: 26406802e22b07646a27cbf4f6926835, type: 3}
+      duration: 5
       fadeDuration: 3
       sounds: []
 --- !u!1 &573689653
