@@ -32,6 +32,7 @@ public class ReflectionAnimationManager : MonoBehaviour
 
     [Header("Animations")]
     [SerializeField] List<ScreenAnimation> animations;
+    private bool isPlaying = false;
 
     Dictionary<string, ScreenAnimation> animationDictionary;
     Material screenMaterial;
@@ -60,6 +61,7 @@ public class ReflectionAnimationManager : MonoBehaviour
 
     void PlayAnimation(string animationName)
     {
+        if (isPlaying) return;
         StopAllCoroutines();
 		AudioManager.Instance.StopAllSounds();
         StartCoroutine(PlayAnimationCoroutine(animationDictionary[animationName]));
@@ -67,6 +69,8 @@ public class ReflectionAnimationManager : MonoBehaviour
 
     IEnumerator PlayAnimationCoroutine(ScreenAnimation animation)
     {
+        isPlaying = true;
+
         foreach (var frame in animation.frames)
         {
             screenMaterial.SetTexture("_BaseMap", frame.image);
@@ -80,6 +84,8 @@ public class ReflectionAnimationManager : MonoBehaviour
             yield return new WaitForSeconds(frame.duration);
             yield return StartCoroutine(FadeAlpha(.6f, 0f, frame.fadeDuration));
         }
+
+        isPlaying = false;
     }
 
     IEnumerator PlayDelayedSound(SoundCue soundCue)
