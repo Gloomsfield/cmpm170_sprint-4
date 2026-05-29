@@ -869,7 +869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3130292598344662506, guid: 60c0f4d548e8649d58abe5034f6deb11, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1417,6 +1417,10 @@ PrefabInstance:
     - target: {fileID: 451554508363958019, guid: 5f1d35ee233f44fc2bc6ffb964a84c4c, type: 3}
       propertyPath: objectName
       value: Cave
+      objectReference: {fileID: 0}
+    - target: {fileID: 451554508363958019, guid: 5f1d35ee233f44fc2bc6ffb964a84c4c, type: 3}
+      propertyPath: hitsRequired
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2069236522293197959, guid: 5f1d35ee233f44fc2bc6ffb964a84c4c, type: 3}
       propertyPath: m_Name
@@ -2004,6 +2008,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bumper (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7018733692020835655, guid: 696ecb2ed9fac57f484b6a294f367ab3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2023,15 +2031,15 @@ PrefabInstance:
       objectReference: {fileID: 1803140990}
     - target: {fileID: 3198558385987491392, guid: 3bbd9a48737484d2dae398e6102f13dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.427
+      value: -4.259
       objectReference: {fileID: 0}
     - target: {fileID: 3198558385987491392, guid: 3bbd9a48737484d2dae398e6102f13dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.457
+      value: 7.185
       objectReference: {fileID: 0}
     - target: {fileID: 3198558385987491392, guid: 3bbd9a48737484d2dae398e6102f13dd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 16.109
+      value: 16.112
       objectReference: {fileID: 0}
     - target: {fileID: 3198558385987491392, guid: 3bbd9a48737484d2dae398e6102f13dd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2979,6 +2987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bumper (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7018733692020835655, guid: 696ecb2ed9fac57f484b6a294f367ab3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3182,7 +3194,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
