@@ -4,6 +4,7 @@ class Bumper : MonoBehaviour {
 
 	private void OnCollisionEnter(Collision collision) {
 		if(collision.gameObject.CompareTag("Ball")) {
+			EventManager.InvokeScoreIncreased(600);
 			Vector3 delta = collision.gameObject.transform.position - gameObject.transform.position;
 			delta.y = 0.0f;
 			delta.Normalize();
