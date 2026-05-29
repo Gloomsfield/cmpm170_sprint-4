@@ -58,6 +58,7 @@ public class GameManager
     public void BallDrained()
     {
         activeBalls--;
+        EventManager.InvokePlayReflectionAnimation("BoarFace");   
         Debug.Log("Ball drained. Active balls: " + activeBalls);
 
         if (activeBalls == 0)
@@ -81,6 +82,15 @@ public class GameManager
         {
             State = GameState.ENDGAME;
             Debug.Log("Game Over!");
+            if(ScoreManager.Instance.GetScore() >= 50000)
+            {
+                EventManager.InvokePlayReflectionAnimation("good score");
+            }
+            else
+            {
+                EventManager.InvokePlayReflectionAnimation("lost ball");    
+            }
+
             EventManager.InvokeGameOver();
         }
     }

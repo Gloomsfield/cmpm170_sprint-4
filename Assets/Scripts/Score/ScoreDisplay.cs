@@ -10,6 +10,11 @@ public class ScoreDisplay : MonoBehaviour {
 		UpdateScore(0);
 	}
 
+	void OnDestroy()
+	{
+		EventManager.updateScore -= UpdateScore;
+	}
+
 	private void UpdateScore(uint newScore) {
 		GetComponent<TextMeshProUGUI>().SetText($"{newScore:N0}");
 	}

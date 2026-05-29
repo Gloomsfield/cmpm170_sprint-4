@@ -76,6 +76,8 @@ public class BallHolder : MonoBehaviour
             EventManager.InvokePlayAnimation("Boulder");
         }
 
+        EventManager.InvokePlayReflectionAnimation("BoarFace");
+
         canTrigger = false;
 
         Debug.Log("Ball held!");

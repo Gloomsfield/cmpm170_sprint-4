@@ -49,6 +49,7 @@ public class UIManager : MonoBehaviour
     {
         spotLight.SetActive(true);
         mainMenu.SetActive(false);
+        Cursor.visible = false;
         GameManager.Instance.ResetGame();
         GameManager.Instance.StartNextBall();
     }
@@ -114,7 +115,7 @@ public class UIManager : MonoBehaviour
         uint score = ScoreManager.Instance.GetScore();
         text.text = "Game Over!\nScore: " + score;
         gameOver.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(startButton);
+        EventSystem.current.SetSelectedGameObject(menuButton2);
     }
 
 }
