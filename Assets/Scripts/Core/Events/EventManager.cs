@@ -69,6 +69,16 @@ public class EventManager
 		updateScore?.Invoke(newScore);
 	}
 
+	public static event Action startBloodlust;
+	public static void InvokeStartBloodlust() {
+		startBloodlust?.Invoke();
+	}
+
+	public static event Action stopBloodlust;
+	public static void InvokeStopBloodlust() {
+		stopBloodlust?.Invoke();
+	}
+
     public static event Action<string> playAnimation;
     public static void InvokePlayAnimation(string animationName)
     {

@@ -12,10 +12,21 @@ public class ScoreManager {
 				_instance = new();
 				
 				EventManager.increaseScore += _instance.IncreaseScore;
+
+				EventManager.startBloodlust += _instance.IncreaseMultiplier;
+				EventManager.stopBloodlust += _instance.ReduceMultiplier;
 			}
 
 			return _instance;
 		}
+	}
+
+	private void IncreaseMultiplier() {
+		_scoreMultiplier += 1.0f;
+	}
+
+	private void ReduceMultiplier() {
+		_scoreMultiplier -= 1.0f;
 	}
 
 	private void IncreaseScore(uint delta) {
