@@ -38,7 +38,10 @@ public class Controller : MonoBehaviour
     {
         //TODO: Add event to handle rotation input
         //Debug.Log("Rotation: " + value.Get<float>());
-        EventManager.InvokeRotation(value.Get<float>());
+        if (!GameManager.Instance.CanTilt) return;
+        float mouseAmount = value.Get<float>() * 0.25f;
+        EventManager.InvokeRotation(mouseAmount);
+        //EventManager.InvokeRotation(value.Get<float>());
     }
 
     void OnReset()

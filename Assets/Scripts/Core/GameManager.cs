@@ -31,6 +31,7 @@ public class GameManager
         activeBalls = 0;
         ScoreManager.Instance.ResetScore();
         State = GameState.PREGAME;
+        DisableTilt();
     }
 
     public void StartNextBall()
@@ -45,6 +46,7 @@ public class GameManager
         ballsLeft--;
         activeBalls = 0;
         State = GameState.INGAME;
+        DisableTilt();
         EventManager.InvokeFlickerLight();
         EventManager.InvokeSpawnBall();
     }
@@ -94,6 +96,18 @@ public class GameManager
 
             EventManager.InvokeGameOver();
         }
+    }
+
+    public bool CanTilt { get; private set; }
+
+    public void EnableTilt()
+    {
+        CanTilt = true;
+    }
+
+    public void DisableTilt()
+    {
+        CanTilt = false;
     }
 
 }

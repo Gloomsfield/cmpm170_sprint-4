@@ -2069,6 +2069,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bumper (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7018733692020835655, guid: 696ecb2ed9fac57f484b6a294f367ab3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5365136219673129731, guid: 696ecb2ed9fac57f484b6a294f367ab3, type: 3}
     - {fileID: 8493499941278361185, guid: 696ecb2ed9fac57f484b6a294f367ab3, type: 3}
@@ -5528,6 +5532,10 @@ PrefabInstance:
     - target: {fileID: 7018733692020835655, guid: 696ecb2ed9fac57f484b6a294f367ab3, type: 3}
       propertyPath: m_Name
       value: Bumper (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018733692020835655, guid: 696ecb2ed9fac57f484b6a294f367ab3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5365136219673129731, guid: 696ecb2ed9fac57f484b6a294f367ab3, type: 3}

@@ -46,6 +46,9 @@ public class Ball : MonoBehaviour {
     }
 
     private void PushBall (float amount) {
+
+        if (!GameManager.Instance.CanTilt) return;
+
         if (amount < -0.8 || amount > 0.8) { EventManager.InvokeRoundEnded(); 
             Debug.Log("OVERTURN");
         }

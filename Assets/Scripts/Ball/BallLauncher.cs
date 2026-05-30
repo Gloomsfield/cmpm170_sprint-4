@@ -24,6 +24,7 @@ public class BallLauncher : MonoBehaviour
         if (currentBall == null) return;
 
         canShoot = false;
+        GameManager.Instance.DisableTilt();
         wallshootBlocker.isTrigger = true;
         StartCoroutine(EnableWall());
         AudioManager.Instance.PlaySound("BumperClickClack");
@@ -48,5 +49,6 @@ public class BallLauncher : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         Debug.Log("WAll triggered");
         wallshootBlocker.isTrigger = false;
+        GameManager.Instance.EnableTilt();
     }
 }
