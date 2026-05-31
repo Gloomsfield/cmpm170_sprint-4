@@ -88,6 +88,11 @@ public class AnimationManager : MonoBehaviour
         }
 
         yield return StartCoroutine(screenFader.FadeToBlack(0.7f));
+
+        if (animation.animationName == "Fire" || animation.animationName == "Boulder") 
+        {
+            GameManager.Instance.UnlockBallHolders();
+        }
     }
 
     IEnumerator PlayDelayedSound(SoundCue soundCue)

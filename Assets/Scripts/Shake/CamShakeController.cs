@@ -21,4 +21,9 @@ public class CamShakeController : MonoBehaviour {
                 );
     }
 
+    void OnDestroy()
+    {
+        EventManager.rotation -= TiltCam;
+    }
+
 }

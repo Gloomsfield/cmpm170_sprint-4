@@ -27,6 +27,7 @@ public class BallHolder : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (GameManager.Instance.BallHolderLocked) return;
         if (!canTrigger) return;
 
         Debug.Log("Cave triggered");
@@ -39,7 +40,8 @@ public class BallHolder : MonoBehaviour
 
         if (currentHits >= hitsRequired)
         {
-            currentHits =0;
+            currentHits = 0;
+            GameManager.Instance.LockBallHolders();
             HoldBall(ball);
             canTrigger = false;
             StartCoroutine(SpawnBalls());

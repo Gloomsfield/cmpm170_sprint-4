@@ -30,6 +30,8 @@ public class GameManager
         ballsLeft = startingBalls;
         activeBalls = 0;
         ScoreManager.Instance.ResetScore();
+        BallHolderLocked = false;
+        AudioManager.Instance.StopAllSounds();
         State = GameState.PREGAME;
         DisableTilt();
     }
@@ -110,12 +112,16 @@ public class GameManager
         CanTilt = false;
     }
 
-}
+    public bool BallHolderLocked { get; private set; }
 
-    /*
-    Going to track:
-    - score
-    - balls/round left
-    - game state
-    - game over
-    */
+    public void LockBallHolders()
+    {
+        BallHolderLocked = true;
+    }
+
+    public void UnlockBallHolders()
+    {
+        BallHolderLocked = false;
+    }
+
+}
