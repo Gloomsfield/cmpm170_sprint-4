@@ -155,4 +155,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ball
   shootForce: 30
   ballTippingTime: 0.5
-  forceMultiplier: 5
+  forceMultiplier: 10

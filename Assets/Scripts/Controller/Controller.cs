@@ -31,7 +31,8 @@ public class Controller : MonoBehaviour
     {
         //TODO: Add event to handle rotation AD input
         //Debug.Log("Rotation AD: " + value.Get<float>());
-        EventManager.InvokeRotationAD(value.Get<float>());
+        if (!GameManager.Instance.CanTilt) return;
+        EventManager.InvokeNudgeBall(value.Get<float>());
     }
 
     void OnRotation(InputValue value)

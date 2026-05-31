@@ -12,7 +12,7 @@ public class AudioManager : MonoBehaviour
     {
         public string eventName;      // e.g., "BallInteract", "PlayerJump"
         public AudioClip clip;        // The audio file itself
-        [Range(0f, 1f)] public float volume;
+        [Range(0f, 5f)] public float volume;
         [Range(0.5f, 2f)] public float pitch;
     }
 
@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour
 
         // Apply settings directly from your inspector configuration
         availableSource.clip = sound.clip;
-        availableSource.volume = sound.volume == 0 ? 1f : sound.volume; // Default to 1 if left at 0
+        availableSource.volume = sound.volume == 0 ? 5f : sound.volume; // Default to 1 if left at 0
         availableSource.pitch = sound.pitch == 0 ? 1f : sound.pitch;   // Default to 1 if left at 0
         availableSource.Play();
     }

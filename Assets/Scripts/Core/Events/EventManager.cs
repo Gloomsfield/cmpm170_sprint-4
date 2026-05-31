@@ -22,10 +22,10 @@ public class EventManager
         rightFlipperTriggered?.Invoke();
     }
 
-    public static event Action<float> rotationAD;
-    public static void InvokeRotationAD(float rotationValue)
+    public static event Action<float> nudgeBall;
+    public static void InvokeNudgeBall(float rotationValue)
     {
-        rotationAD?.Invoke(rotationValue);
+        nudgeBall?.Invoke(rotationValue);
     }
 
     public static event Action<float> rotation;

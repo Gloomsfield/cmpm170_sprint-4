@@ -17,17 +17,26 @@ public class Ball : MonoBehaviour {
     [Header("Ball Settings")]
     [SerializeField] private float shootForce = 10.0f;
     [SerializeField] private float ballTippingTime = 0.1f;
-    [SerializeField] private float forceMultiplier = 5f;
+    [SerializeField] private float forceMultiplier = 50f;
+
+    [Header("Keyboard Nudge Tilt")]
+    [SerializeField] float nudgeStrength = -2.0f;
+    [SerializeField] float nudgeTiltIncrease = 1.0f;
+    [SerializeField] float maxNudgeTilt = 3.0f;
+    [SerializeField] float nidgeTiltCoolDown = 1.0f;
+    private float currentNudgeTilt = 0f;
 
 
     void OnEnable() {
         //EventManager.reset += ResetBall;
         EventManager.rotation += PushBall;
+        EventManager.nudgeBall += NudgeBall;
         _rb = GetComponent<Rigidbody>();
     }
 
     void OnDestroy() {
         EventManager.rotation -= PushBall;
+        EventManager.nudgeBall -= NudgeBall;
         //EventManager.reset -= ResetBall;
         StopAllCoroutines();
     }
@@ -65,7 +74,8 @@ public class Ball : MonoBehaviour {
         if (_tipping && BallChangedDirection(direction, amount)) {
             //Debug.Log("WENT OTHER WAY");
             StopCoroutine(_tipCoroutine);
-            _rb.linearVelocity = Vector3.zero;
+            //_rb.linearVelocity = Vector3.zero;
+            _rb.linearVelocity = new Vector3(0, _rb.linearVelocity.y, _rb.linearVelocity.z);
             _canTip = false;
             _tipping = false;
             return;
@@ -80,8 +90,27 @@ public class Ball : MonoBehaviour {
         _lastFrameTip += tipAmount;
         var forceVector = new Vector3(tipAmount * forceMultiplier, 0, 0);
         //var newPosition = transform.position + forceVector; 
-        _rb.linearVelocity += forceVector;
+        //_rb.linearVelocity += forceVector;
+        _rb.AddForce(forceVector, ForceMode.Impulse);
         //Debug.Log($"Applying force {tipAmount}");
+    }
+
+    private void NudgeBall(float amount)
+    {
+        if (!GameManager.Instance.CanTilt) return;
+
+        if (amount == 0) return;
+
+        currentNudgeTilt += nudgeTiltIncrease;
+
+        if (currentNudgeTilt >= maxNudgeTilt)
+        {
+            TiltTooMuch();
+            return;
+        }
+
+        Vector3 forceVector = new Vector3(amount * nudgeStrength, 0, 0);
+        _rb.AddForce(forceVector, ForceMode.Impulse);
     }
 
     private bool BallChangedDirection(Direction currentDirection, float forceAmount) {
@@ -107,5 +136,25 @@ public class Ball : MonoBehaviour {
         EventManager.InvokeFlippersDisabled();
         EventManager.InvokeShowUIText(true, "TiltText");
         EventManager.InvokePlayReflectionAnimation("BoarFaceAngry");
+    }
+
+    void Update()
+    {
+        if (currentNudgeTilt > 0)
+        {
+            currentNudgeTilt -= nudgeTiltIncrease * Time.deltaTime;
+            currentNudgeTilt = Mathf.Max(currentNudgeTilt, 0);
+        }
+    }
+
+    private void TiltTooMuch()
+    {
+        currentNudgeTilt = 0f;
+        GameManager.Instance.DisableTilt();
+        EventManager.InvokeFlippersDisabled();
+        EventManager.InvokeShowUIText(true, "TiltText");
+        EventManager.InvokePlayReflectionAnimation("BoarFaceAngry");
+
+        Debug.Log("Tilted to much");
     }
 }
