@@ -44,10 +44,10 @@ public class Controller : MonoBehaviour
         //EventManager.InvokeRotation(value.Get<float>());
     }
 
-    void OnReset()
+    /*void OnReset()
     {
         EventManager.InvokeReset();
-    }
+    }*/
 
     void OnSpawnBall()
     {
@@ -56,6 +56,7 @@ public class Controller : MonoBehaviour
 
     void OnPauseMenu()
     {
+        if (GameManager.Instance.State == GameManager.GameState.PREGAME || GameManager.Instance.State == GameManager.GameState.ENDGAME ) return;
         EventManager.InvokePauseMenu();
     }
 }

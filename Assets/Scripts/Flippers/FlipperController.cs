@@ -31,8 +31,12 @@ public class FlipperController : MonoBehaviour {
         SetMotorAttributes();
         SubscribeToTriggerEvent();
 
-        EventManager.roundEnded += () => { _enabled = false; };
-        EventManager.spawnBall += () => { _enabled = true; Debug.Log("enabled"); };
+        //EventManager.roundEnded += () => { _enabled = false; };
+        //EventManager.spawnBall += () => { _enabled = true; Debug.Log("enabled"); };
+
+        EventManager.roundEnded += DisableFlipperControls;
+        EventManager.flippersDisbaled += DisableFlipperControls;
+        EventManager.flippersEnabled += EnableFlipperControls;
     }
 
     void Update() {
@@ -81,5 +85,25 @@ public class FlipperController : MonoBehaviour {
             //EventManager.rightFlipperTriggered += EnableFlipper;
         }
         flipperAction.canceled += (_) => _buttonHeld = false; 
+    }
+
+    private void EnableFlipperControls()
+    {
+        _enabled = true;
+        Debug.Log("Flippers enabled");
+    }
+
+    private void DisableFlipperControls()
+    {
+        _enabled = false;
+        _buttonHeld = false;
+        Debug.Log("Flippers disabled");
+    }
+
+    void OnDestroy()
+    {
+        EventManager.roundEnded -= DisableFlipperControls;
+        EventManager.flippersDisbaled -= DisableFlipperControls;
+        EventManager.flippersEnabled -= EnableFlipperControls;
     }
 }

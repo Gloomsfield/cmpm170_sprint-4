@@ -50,5 +50,6 @@ public class BallLauncher : MonoBehaviour
         Debug.Log("WAll triggered");
         wallshootBlocker.isTrigger = false;
         GameManager.Instance.EnableTilt();
+        EventManager.InvokeFlippersEnabled();
     }
 }

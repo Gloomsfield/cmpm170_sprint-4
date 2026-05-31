@@ -138,4 +138,15 @@ public class EventManager
     {
         flickerLight?.Invoke();
     }
+
+    public static event Action flippersDisbaled;
+    public static void InvokeFlippersDisabled()
+    {
+        flippersDisbaled?.Invoke();
+    }
+    public static event Action flippersEnabled;
+    public static void InvokeFlippersEnabled()
+    {
+        flippersEnabled?.Invoke();
+    }
 }

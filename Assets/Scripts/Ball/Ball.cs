@@ -21,14 +21,14 @@ public class Ball : MonoBehaviour {
 
 
     void OnEnable() {
-        EventManager.reset += ResetBall;
+        //EventManager.reset += ResetBall;
         EventManager.rotation += PushBall;
         _rb = GetComponent<Rigidbody>();
     }
 
     void OnDestroy() {
         EventManager.rotation -= PushBall;
-        EventManager.reset -= ResetBall;
+        //EventManager.reset -= ResetBall;
         StopAllCoroutines();
     }
 
@@ -38,12 +38,12 @@ public class Ball : MonoBehaviour {
     }
 
 
-    void ResetBall() {
+    /*void ResetBall() {
         Debug.Log("Ball reset!");
         _rb.linearVelocity = Vector3.zero;
         _rb.angularVelocity = Vector3.zero;
         transform.position = new Vector3(0, 10, -3);
-    }
+    }*/
 
     private void PushBall (float amount) {
 
@@ -103,6 +103,8 @@ public class Ball : MonoBehaviour {
         _rb.linearVelocity = Vector3.zero;
         _canTip = false;
         _tipping = false;
+        //GameManager.Instance.DisableTilt();
+        EventManager.InvokeFlippersDisabled();
         EventManager.InvokeShowUIText(true, "TiltText");
         EventManager.InvokePlayReflectionAnimation("BoarFaceAngry");
     }
