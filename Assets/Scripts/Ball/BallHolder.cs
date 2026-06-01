@@ -76,6 +76,7 @@ public class BallHolder : MonoBehaviour
         else if (objectName == "Cave")
         {
             EventManager.InvokePlayAnimation("Boulder");
+            StartCoroutine(FlashPiggyLight());
         }
 
         EventManager.InvokePlayReflectionAnimation("BoarFace");
@@ -126,6 +127,12 @@ public class BallHolder : MonoBehaviour
         EventManager.InvokeNormalLights();
         EventManager.InvokeShowUIText(false, "BloodLustText");
         EventManager.InvokeParticle(false);
+    }
+
+    IEnumerator FlashPiggyLight()
+    {
+        yield return new WaitForSeconds(22.3f);
+        EventManager.InvokeFlickerLight();
     }
 
 }

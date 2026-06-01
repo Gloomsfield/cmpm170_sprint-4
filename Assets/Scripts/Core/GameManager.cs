@@ -49,7 +49,6 @@ public class GameManager
         activeBalls = 0;
         State = GameState.INGAME;
         DisableTilt();
-        EventManager.InvokeFlickerLight();
         EventManager.InvokeSpawnBall();
     }
 
@@ -74,7 +73,6 @@ public class GameManager
 
     void EndRound()
     {
-        EventManager.InvokeFlickerLight();
         EventManager.InvokeRoundEnded();
         State = GameState.ROUNDEND;
 

@@ -23,7 +23,7 @@ public class Ball : MonoBehaviour {
     [SerializeField] float nudgeStrength = -2.0f;
     [SerializeField] float nudgeTiltIncrease = 1.0f;
     [SerializeField] float maxNudgeTilt = 3.0f;
-    [SerializeField] float nidgeTiltCoolDown = 1.0f;
+    [SerializeField] float nudgeTiltCoolDown = 1.0f;
     private float currentNudgeTilt = 0f;
 
 
@@ -142,7 +142,7 @@ public class Ball : MonoBehaviour {
     {
         if (currentNudgeTilt > 0)
         {
-            currentNudgeTilt -= nudgeTiltIncrease * Time.deltaTime;
+            currentNudgeTilt -= nudgeTiltCoolDown * Time.deltaTime;
             currentNudgeTilt = Mathf.Max(currentNudgeTilt, 0);
         }
     }
